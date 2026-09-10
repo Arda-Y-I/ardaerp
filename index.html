@@ -18,9 +18,7 @@ body{
     color:#1f2937;
 }
 
-button,
-input,
-select{
+button,input,select,textarea{
     font-family:inherit;
 }
 
@@ -29,21 +27,21 @@ button{
 }
 
 .app{
-    display:flex;
     min-height:100vh;
+    display:flex;
 }
 
 /* SIDEBAR */
 .sidebar{
-    width:250px;
-    background:#172235;
-    color:white;
-    min-height:100vh;
     position:fixed;
     left:0;
     top:0;
     bottom:0;
+    width:260px;
     overflow-y:auto;
+    background:#162235;
+    color:white;
+    z-index:20;
 }
 
 .logo{
@@ -51,206 +49,206 @@ button{
     display:flex;
     align-items:center;
     padding:0 24px;
+    background:#101a2a;
     font-size:23px;
     font-weight:800;
-    background:#111a2b;
-    letter-spacing:.5px;
 }
 
-.company-box{
-    margin:18px 14px;
+.company{
+    margin:16px 14px;
     padding:14px;
-    background:#202d42;
     border-radius:10px;
+    background:#202e43;
 }
 
-.company-box small{
+.company small{
     display:block;
-    color:#98a7bd;
-    font-size:11px;
-    margin-bottom:6px;
+    color:#91a0b5;
+    font-size:10px;
+    margin-bottom:5px;
 }
 
-.company-box strong{
+.company strong{
     display:block;
-    font-size:14px;
+    font-size:13px;
 }
 
-.company-box span{
-    color:#91a0b7;
-    font-size:12px;
-}
-
-.menu-title{
-    padding:10px 20px;
-    color:#8392aa;
+.company span{
+    display:block;
+    margin-top:4px;
+    color:#91a0b5;
     font-size:11px;
+}
+
+.section-title{
+    color:#8190a6;
+    padding:13px 20px 7px;
+    font-size:10px;
+    font-weight:700;
     text-transform:uppercase;
-    font-weight:bold;
 }
 
-.menu{
-    padding:0 12px 20px;
+.nav{
+    padding:0 11px 20px;
 }
 
-.menu-item{
+.nav-item{
     display:flex;
     align-items:center;
     gap:12px;
-    padding:12px 14px;
-    margin:4px 0;
-    border-radius:9px;
-    color:#d9e0ea;
-    transition:.2s;
-    user-select:none;
-    font-size:14px;
+    margin:3px 0;
+    padding:11px 13px;
+    border-radius:8px;
+    color:#dbe2ed;
+    font-size:13px;
+    transition:.15s;
 }
 
-.menu-item:hover{
-    background:#26354b;
+.nav-item:hover{
+    background:#26364d;
 }
 
-.menu-item.active{
-    background:#3a4a62;
+.nav-item.active{
+    background:#3a4b65;
     color:#fff;
 }
 
-.menu-icon{
-    width:20px;
+.nav-icon{
+    width:21px;
     text-align:center;
     font-size:16px;
 }
 
-.submenu{
+.subnav{
     display:none;
-    padding-left:17px;
+    margin-left:14px;
 }
 
-.submenu.open{
+.subnav.open{
     display:block;
 }
 
-.sub-item{
-    padding:9px 12px 9px 36px;
+.subnav div{
     color:#aebbd0;
-    border-radius:7px;
-    font-size:13px;
+    padding:8px 10px 8px 30px;
+    border-radius:6px;
+    font-size:12px;
     cursor:pointer;
 }
 
-.sub-item:hover{
-    background:#223047;
+.subnav div:hover{
+    background:#24334a;
     color:white;
 }
 
 /* MAIN */
 .main{
     flex:1;
-    margin-left:250px;
+    margin-left:260px;
     min-width:0;
 }
 
-/* TOPBAR */
+/* TOP */
 .topbar{
     height:72px;
     background:white;
-    border-bottom:1px solid #e3e7ed;
+    border-bottom:1px solid #e4e8ed;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:0 28px;
+    padding:0 25px;
     position:sticky;
     top:0;
     z-index:10;
 }
 
-.left-top{
+.top-left{
     display:flex;
     align-items:center;
-    gap:15px;
+    gap:18px;
 }
 
-.page-title{
-    font-size:20px;
+.top-title{
+    font-size:19px;
     font-weight:700;
-    color:#172235;
 }
 
 .search{
-    width:290px;
     position:relative;
-}
-
-.search input{
-    width:100%;
-    padding:11px 14px 11px 38px;
-    border:1px solid #d9dee7;
-    border-radius:8px;
-    outline:none;
-    font-size:13px;
-    background:#f8fafc;
-}
-
-.search input:focus{
-    border-color:#7891b5;
-    background:white;
+    width:290px;
 }
 
 .search span{
     position:absolute;
-    left:13px;
+    left:12px;
     top:10px;
-    color:#8290a5;
+    color:#7b8797;
+}
+
+.search input{
+    width:100%;
+    border:1px solid #dce2e9;
+    border-radius:8px;
+    padding:10px 12px 10px 36px;
+    background:#f8fafc;
+    outline:none;
+    font-size:12px;
+}
+
+.search input:focus{
+    background:white;
+    border-color:#8da0ba;
 }
 
 .top-actions{
     display:flex;
     align-items:center;
-    gap:10px;
+    gap:8px;
 }
 
-.top-btn{
-    width:40px;
-    height:40px;
+.icon-btn{
+    width:39px;
+    height:39px;
     border:1px solid #dfe4ea;
     background:white;
     border-radius:8px;
-    font-size:17px;
+    font-size:16px;
 }
 
-.top-btn:hover{
-    background:#f2f5f8;
+.icon-btn:hover{
+    background:#f3f5f8;
 }
 
 .user{
     display:flex;
     align-items:center;
-    gap:10px;
-    margin-left:7px;
+    gap:9px;
     padding-left:12px;
+    margin-left:5px;
     border-left:1px solid #e1e5eb;
 }
 
 .avatar{
     width:38px;
     height:38px;
-    border-radius:50%;
-    background:#24364f;
-    color:white;
     display:flex;
-    align-items:center;
     justify-content:center;
-    font-weight:bold;
+    align-items:center;
+    background:#243853;
+    color:white;
+    border-radius:50%;
+    font-size:12px;
+    font-weight:700;
 }
 
-.user-info strong{
+.user strong{
     display:block;
-    font-size:13px;
+    font-size:12px;
 }
 
-.user-info span{
-    color:#8290a5;
-    font-size:11px;
+.user span{
+    color:#7d8999;
+    font-size:10px;
 }
 
 /* CONTENT */
@@ -267,7 +265,7 @@ button{
 }
 
 .heading{
-    margin-bottom:22px;
+    margin-bottom:20px;
 }
 
 .heading h1{
@@ -276,213 +274,17 @@ button{
 }
 
 .heading p{
-    color:#7b8798;
-    font-size:13px;
-}
-
-/* KPI */
-.kpi-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:16px;
-}
-
-.kpi{
-    background:white;
-    border:1px solid #e6eaf0;
-    border-radius:12px;
-    padding:20px;
-    box-shadow:0 2px 7px rgba(15,23,42,.04);
-}
-
-.kpi-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.kpi-label{
-    font-size:12px;
-    color:#7b8798;
-}
-
-.kpi-icon{
-    width:38px;
-    height:38px;
-    border-radius:9px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:#eef3f8;
-    font-size:18px;
-}
-
-.kpi-value{
-    font-size:27px;
-    font-weight:800;
-    margin-top:11px;
-}
-
-.kpi-bottom{
-    margin-top:7px;
-    color:#7c8797;
-    font-size:11px;
-}
-
-/* CARDS */
-.grid-2{
-    display:grid;
-    grid-template-columns:1.45fr 1fr;
-    gap:18px;
-    margin-top:20px;
-}
-
-.card{
-    background:white;
-    border:1px solid #e5e9ef;
-    border-radius:12px;
-    box-shadow:0 2px 7px rgba(15,23,42,.04);
-    overflow:hidden;
-}
-
-.card-header{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:18px 20px;
-    border-bottom:1px solid #edf0f4;
-}
-
-.card-header h3{
-    font-size:15px;
-}
-
-.card-body{
-    padding:20px;
-}
-
-.link-btn{
-    color:#315d91;
-    background:none;
-    border:0;
+    color:#7c8899;
     font-size:12px;
 }
 
-/* QUICK ACTION */
-.quick-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:11px;
-}
-
-.quick-btn{
-    border:1px solid #dfe4ea;
-    background:#fafbfc;
-    border-radius:9px;
-    padding:13px;
-    text-align:left;
-    transition:.2s;
-}
-
-.quick-btn:hover{
-    background:#f0f4f8;
-}
-
-.quick-btn strong{
-    display:block;
-    font-size:13px;
-    margin-top:5px;
-}
-
-.quick-btn span{
-    color:#8390a1;
-    font-size:11px;
-}
-
-/* TABLE */
-.table-wrap{
-    overflow-x:auto;
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-}
-
-th,
-td{
-    padding:13px 12px;
-    border-bottom:1px solid #eef1f5;
-    text-align:left;
-    font-size:12px;
-}
-
-th{
-    color:#738196;
-    font-size:11px;
-    text-transform:uppercase;
-    font-weight:700;
-    background:#fafbfc;
-}
-
-td{
-    color:#273449;
-}
-
-.badge{
-    display:inline-flex;
-    padding:5px 8px;
-    border-radius:20px;
-    font-size:10px;
-    font-weight:700;
-}
-
-.badge.red{
-    background:#fdecec;
-    color:#b42318;
-}
-
-.badge.green{
-    background:#eaf7ef;
-    color:#18794e;
-}
-
-.badge.yellow{
-    background:#fff5dc;
-    color:#9a6700;
-}
-
-.empty{
-    padding:35px;
-    text-align:center;
-    color:#8a96a7;
-    font-size:13px;
-}
-
-/* PAGE TOOLBAR */
-.toolbar{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:12px;
-    margin-bottom:18px;
-    flex-wrap:wrap;
-}
-
-.toolbar-left,
-.toolbar-right{
-    display:flex;
-    align-items:center;
-    gap:9px;
-    flex-wrap:wrap;
-}
-
+/* BUTTONS */
 .btn{
     border:1px solid #d8dee7;
     background:white;
-    color:#273449;
-    padding:10px 14px;
+    color:#243247;
     border-radius:8px;
+    padding:9px 13px;
     font-size:12px;
 }
 
@@ -491,96 +293,174 @@ td{
 }
 
 .btn.primary{
-    background:#213854;
-    border-color:#213854;
     color:white;
+    background:#233b59;
+    border-color:#233b59;
 }
 
 .btn.primary:hover{
-    background:#182b42;
+    background:#192f4a;
 }
 
-.btn.danger{
+.btn.green{
+    color:white;
+    background:#23734d;
+    border-color:#23734d;
+}
+
+.btn.red{
     color:#b42318;
-    border-color:#f1c4c0;
+    border-color:#efc3bf;
 }
 
-.form-control{
-    padding:10px 12px;
-    border:1px solid #d8dee7;
+.btn.small{
+    padding:6px 9px;
+    font-size:11px;
+}
+
+/* KPI */
+.kpis{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:14px;
+}
+
+.kpi{
+    background:white;
+    border:1px solid #e5e9ee;
+    border-radius:11px;
+    padding:18px;
+    box-shadow:0 2px 7px rgba(15,23,42,.035);
+}
+
+.kpi-label{
+    color:#7a8798;
+    font-size:11px;
+}
+
+.kpi-value{
+    margin-top:9px;
+    font-size:25px;
+    font-weight:800;
+}
+
+.kpi-foot{
+    margin-top:6px;
+    color:#8b96a5;
+    font-size:10px;
+}
+
+/* GRID */
+.grid-2{
+    display:grid;
+    grid-template-columns:1.4fr 1fr;
+    gap:17px;
+    margin-top:18px;
+}
+
+.grid-3{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    margin-top:18px;
+}
+
+.card{
+    background:white;
+    border:1px solid #e5e9ee;
+    border-radius:11px;
+    overflow:hidden;
+    box-shadow:0 2px 7px rgba(15,23,42,.035);
+}
+
+.card-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 18px;
+    border-bottom:1px solid #edf0f4;
+}
+
+.card-head h3{
+    font-size:14px;
+}
+
+.card-body{
+    padding:18px;
+}
+
+.quick-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+}
+
+.quick{
+    padding:13px;
+    border:1px solid #e1e6ec;
+    background:#fafbfc;
     border-radius:8px;
+    text-align:left;
+}
+
+.quick:hover{
+    background:#f1f4f7;
+}
+
+.quick b{
+    display:block;
+    font-size:12px;
+    margin-top:6px;
+}
+
+.quick span{
+    display:block;
+    color:#8792a2;
+    font-size:10px;
+    margin-top:3px;
+}
+
+/* TOOLBAR */
+.toolbar{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    margin-bottom:16px;
+    flex-wrap:wrap;
+}
+
+.toolbar-left,
+.toolbar-right{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    align-items:center;
+}
+
+/* FORM */
+.form-control{
+    border:1px solid #d8dee6;
+    border-radius:7px;
+    padding:9px 10px;
     outline:none;
     background:white;
     font-size:12px;
 }
 
 .form-control:focus{
-    border-color:#7891b5;
-}
-
-.stock-grid{
-    display:grid;
-    grid-template-columns:1fr;
-}
-
-/* MODAL */
-.modal-bg{
-    position:fixed;
-    inset:0;
-    background:rgba(15,23,42,.5);
-    display:none;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
-    z-index:50;
-}
-
-.modal-bg.show{
-    display:flex;
-}
-
-.modal{
-    width:100%;
-    max-width:650px;
-    background:white;
-    border-radius:13px;
-    box-shadow:0 20px 55px rgba(0,0,0,.2);
-    overflow:hidden;
-}
-
-.modal-header{
-    padding:18px 20px;
-    border-bottom:1px solid #e8ecf1;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.modal-header h3{
-    font-size:16px;
-}
-
-.close{
-    border:0;
-    background:none;
-    font-size:23px;
-    color:#748095;
-}
-
-.modal-body{
-    padding:20px;
+    border-color:#8297b2;
 }
 
 .form-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:14px;
+    grid-template-columns:repeat(2,1fr);
+    gap:13px;
 }
 
 .form-group{
     display:flex;
     flex-direction:column;
-    gap:6px;
+    gap:5px;
 }
 
 .form-group.full{
@@ -588,84 +468,212 @@ td{
 }
 
 .form-group label{
-    font-size:11px;
     color:#68768a;
+    font-weight:700;
+    font-size:10px;
+}
+
+/* TABLE */
+.table-wrap{
+    overflow:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:750px;
+}
+
+th,td{
+    border-bottom:1px solid #edf0f4;
+    padding:11px 12px;
+    text-align:left;
+    font-size:11px;
+}
+
+th{
+    background:#fafbfc;
+    color:#728094;
+    font-size:10px;
+    text-transform:uppercase;
+}
+
+.badge{
+    display:inline-flex;
+    border-radius:20px;
+    padding:4px 8px;
+    font-size:9px;
     font-weight:700;
 }
 
-.modal-footer{
-    padding:15px 20px;
-    border-top:1px solid #e8ecf1;
-    display:flex;
-    justify-content:flex-end;
-    gap:8px;
+.badge.green{
+    background:#eaf7ef;
+    color:#18794e;
 }
 
-/* PLACEHOLDER */
-.module-placeholder{
-    background:white;
-    border:1px solid #e5e9ef;
-    border-radius:12px;
-    padding:55px 30px;
+.badge.red{
+    background:#fdecec;
+    color:#b42318;
+}
+
+.badge.yellow{
+    background:#fff5dc;
+    color:#936400;
+}
+
+.badge.blue{
+    background:#eaf2fb;
+    color:#315d91;
+}
+
+.empty{
     text-align:center;
-}
-
-.module-placeholder .big{
-    font-size:42px;
-    margin-bottom:15px;
-}
-
-.module-placeholder h2{
-    margin-bottom:9px;
-}
-
-.module-placeholder p{
-    color:#7d8999;
-    max-width:560px;
-    margin:auto;
-    line-height:1.6;
-}
-
-/* ALERT */
-.alert-list{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-}
-
-.alert-row{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    border:1px solid #edf0f3;
-    border-radius:8px;
-    padding:12px;
-}
-
-.alert-row strong{
-    display:block;
+    padding:34px;
+    color:#8a96a6;
     font-size:12px;
 }
 
-.alert-row span{
-    color:#8995a5;
+/* STAT ROW */
+.stat-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:11px 0;
+    border-bottom:1px solid #edf0f4;
+}
+
+.stat-row:last-child{
+    border-bottom:0;
+}
+
+.stat-row span{
+    color:#778496;
     font-size:11px;
 }
 
-/* RESPONSIVE */
-@media(max-width:1100px){
-    .kpi-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
+.stat-row strong{
+    font-size:12px;
+}
 
-    .grid-2{
-        grid-template-columns:1fr;
+/* PLACEHOLDER */
+.placeholder{
+    text-align:center;
+    background:white;
+    border:1px solid #e5e9ee;
+    border-radius:11px;
+    padding:55px 30px;
+}
+
+.placeholder .big{
+    font-size:44px;
+    margin-bottom:12px;
+}
+
+.placeholder h2{
+    margin-bottom:7px;
+}
+
+.placeholder p{
+    color:#7d899a;
+    font-size:12px;
+    line-height:1.6;
+    max-width:650px;
+    margin:auto;
+}
+
+/* MODAL */
+.modal-backdrop{
+    display:none;
+    align-items:center;
+    justify-content:center;
+    position:fixed;
+    inset:0;
+    background:rgba(15,23,42,.52);
+    z-index:100;
+    padding:20px;
+}
+
+.modal-backdrop.show{
+    display:flex;
+}
+
+.modal{
+    width:100%;
+    max-width:720px;
+    max-height:90vh;
+    overflow:auto;
+    background:white;
+    border-radius:12px;
+}
+
+.modal-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:17px 19px;
+    border-bottom:1px solid #e6eaef;
+}
+
+.modal-head h3{
+    font-size:15px;
+}
+
+.modal-close{
+    border:0;
+    background:none;
+    font-size:23px;
+    color:#778496;
+}
+
+.modal-body{
+    padding:19px;
+}
+
+.modal-foot{
+    display:flex;
+    justify-content:flex-end;
+    gap:8px;
+    padding:14px 19px;
+    border-top:1px solid #e6eaef;
+}
+
+/* PRODUCTION BOM */
+.bom-row{
+    display:grid;
+    grid-template-columns:1fr 130px 110px 42px;
+    gap:8px;
+    align-items:center;
+    margin-bottom:8px;
+}
+
+/* ALERT */
+.alert{
+    padding:12px 14px;
+    border-radius:8px;
+    margin-bottom:15px;
+    font-size:11px;
+}
+
+.alert.info{
+    background:#edf5ff;
+    color:#295a91;
+}
+
+.alert.warn{
+    background:#fff6df;
+    color:#8e6400;
+}
+
+/* MOBILE */
+@media(max-width:1200px){
+    .kpis{
+        grid-template-columns:repeat(3,1fr);
     }
 }
 
-@media(max-width:800px){
+@media(max-width:950px){
     .sidebar{
-        width:75px;
+        width:78px;
     }
 
     .logo{
@@ -674,50 +682,58 @@ td{
         font-size:15px;
     }
 
-    .company-box,
-    .menu-title,
-    .menu-item span:not(.menu-icon),
-    .sub-item{
+    .company,
+    .section-title,
+    .nav-item span:not(.nav-icon),
+    .subnav{
         display:none;
     }
 
-    .menu-item{
+    .nav-item{
         justify-content:center;
-        padding:13px 5px;
     }
 
     .main{
-        margin-left:75px;
+        margin-left:78px;
+    }
+
+    .grid-2,
+    .grid-3{
+        grid-template-columns:1fr;
+    }
+
+    .search{
+        width:220px;
+    }
+}
+
+@media(max-width:700px){
+    .kpis{
+        grid-template-columns:1fr 1fr;
     }
 
     .search{
         display:none;
     }
 
-    .user-info{
-        display:none;
-    }
-
     .content{
-        padding:17px;
+        padding:16px;
     }
-}
 
-@media(max-width:550px){
-    .kpi-grid{
-        grid-template-columns:1fr;
+    .topbar{
+        padding:0 14px;
+    }
+
+    .user div:last-child{
+        display:none;
     }
 
     .form-grid{
         grid-template-columns:1fr;
     }
 
-    .quick-grid{
+    .bom-row{
         grid-template-columns:1fr;
-    }
-
-    .topbar{
-        padding:0 15px;
     }
 }
 </style>
@@ -727,583 +743,445 @@ td{
 
 <div class="app">
 
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
+<!-- SIDEBAR -->
+<aside class="sidebar">
 
-        <div class="logo">ARDA ERP</div>
+    <div class="logo">ARDA ERP</div>
 
-        <div class="company-box">
-            <small>AKTİF FİRMA</small>
-            <strong>Arda Üretim Ltd. Şti.</strong>
-            <span>2026 / 09</span>
+    <div class="company">
+        <small>AKTİF FİRMA</small>
+        <strong>Arda Üretim Ltd. Şti.</strong>
+        <span>2026 / 09</span>
+    </div>
+
+    <div class="section-title">Yönetim</div>
+
+    <div class="nav">
+
+        <div class="nav-item active" onclick="showPage('dashboard',this)">
+            <span class="nav-icon">🏠</span>
+            <span>Ana Sayfa</span>
         </div>
 
-        <div class="menu-title">Ana Menü</div>
+        <div class="section-title">Operasyon</div>
 
-        <div class="menu">
+        <div class="nav-item" onclick="showPage('stock',this)">
+            <span class="nav-icon">📦</span>
+            <span>Stok & Depo</span>
+        </div>
 
-            <div class="menu-item active" onclick="showPage('dashboard',this)">
-                <span class="menu-icon">🏠</span>
-                <span>Ana Sayfa</span>
-            </div>
+        <div class="nav-item" onclick="toggleSub('productionSub')">
+            <span class="nav-icon">🏭</span>
+            <span>Üretim</span>
+        </div>
 
-            <div class="menu-item" onclick="showPage('stock',this)">
-                <span class="menu-icon">📦</span>
-                <span>Stok & Depo</span>
-            </div>
+        <div id="productionSub" class="subnav">
+            <div onclick="showPage('bom')">Ürün Ağaçları</div>
+            <div onclick="showPage('production')">Üretim Emirleri</div>
+            <div onclick="showPage('workcenter')">İş İstasyonları</div>
+            <div onclick="showPage('productionReport')">Üretim Raporu</div>
+        </div>
 
-            <div class="menu-item" onclick="toggleSub('productionSub')">
-                <span class="menu-icon">🏭</span>
-                <span>Üretim</span>
-            </div>
+        <div class="nav-item" onclick="showPage('purchase',this)">
+            <span class="nav-icon">🛒</span>
+            <span>Satın Alma</span>
+        </div>
 
-            <div id="productionSub" class="submenu">
-                <div class="sub-item" onclick="showPage('production',null)">Üretim Emirleri</div>
-                <div class="sub-item" onclick="showPage('production',null)">Ürün Ağaçları</div>
-                <div class="sub-item" onclick="showPage('production',null)">Rotalar</div>
-                <div class="sub-item" onclick="showPage('production',null)">İş İstasyonları</div>
-            </div>
+        <div class="nav-item" onclick="showPage('sales',this)">
+            <span class="nav-icon">🧾</span>
+            <span>Satış</span>
+        </div>
 
-            <div class="menu-item" onclick="showPage('purchase',this)">
-                <span class="menu-icon">🛒</span>
-                <span>Satın Alma</span>
-            </div>
+        <div class="nav-item" onclick="showPage('current',this)">
+            <span class="nav-icon">👥</span>
+            <span>Cari Hesaplar</span>
+        </div>
 
-            <div class="menu-item" onclick="showPage('sales',this)">
-                <span class="menu-icon">🧾</span>
-                <span>Satış</span>
-            </div>
+        <div class="nav-item" onclick="showPage('shipment',this)">
+            <span class="nav-icon">🚚</span>
+            <span>Sevkiyat</span>
+        </div>
 
-            <div class="menu-item" onclick="showPage('current',this)">
-                <span class="menu-icon">👥</span>
-                <span>Cari Hesaplar</span>
-            </div>
+        <div class="section-title">Yönetim & Destek</div>
 
-            <div class="menu-item" onclick="showPage('finance',this)">
-                <span class="menu-icon">💰</span>
-                <span>Finans</span>
-            </div>
+        <div class="nav-item" onclick="showPage('finance',this)">
+            <span class="nav-icon">💰</span>
+            <span>Finans</span>
+        </div>
 
-            <div class="menu-item" onclick="showPage('shipment',this)">
-                <span class="menu-icon">🚚</span>
-                <span>Sevkiyat</span>
-            </div>
+        <div class="nav-item" onclick="showPage('maintenance',this)">
+            <span class="nav-icon">🔧</span>
+            <span>Bakım</span>
+        </div>
 
-            <div class="menu-item" onclick="showPage('reports',this)">
-                <span class="menu-icon">📊</span>
-                <span>Raporlar</span>
-            </div>
+        <div class="nav-item" onclick="showPage('quality',this)">
+            <span class="nav-icon">✅</span>
+            <span>Kalite</span>
+        </div>
 
-            <div class="menu-title" style="margin-top:10px">Sistem</div>
+        <div class="nav-item" onclick="showPage('reports',this)">
+            <span class="nav-icon">📊</span>
+            <span>Raporlar</span>
+        </div>
 
-            <div class="menu-item" onclick="showPage('settings',this)">
-                <span class="menu-icon">⚙️</span>
-                <span>Ayarlar</span>
+        <div class="nav-item" onclick="showPage('settings',this)">
+            <span class="nav-icon">⚙️</span>
+            <span>Ayarlar</span>
+        </div>
+
+    </div>
+
+</aside>
+
+
+<!-- MAIN -->
+<main class="main">
+
+<header class="topbar">
+
+    <div class="top-left">
+
+        <div id="topTitle" class="top-title">
+            Ana Sayfa
+        </div>
+
+        <div class="search">
+            <span>🔎</span>
+            <input
+                id="globalSearch"
+                placeholder="ERP içinde ara..."
+                oninput="globalSearch(this.value)"
+            >
+        </div>
+
+    </div>
+
+    <div class="top-actions">
+
+        <button class="icon-btn" onclick="location.reload()">↻</button>
+
+        <button class="icon-btn" onclick="showNotifications()">🔔</button>
+
+        <div class="user">
+
+            <div class="avatar">AY</div>
+
+            <div>
+                <strong>Arda Y.</strong>
+                <span>Yönetici</span>
             </div>
 
         </div>
-    </aside>
 
-    <!-- MAIN -->
-    <main class="main">
+    </div>
 
-        <!-- TOPBAR -->
-        <header class="topbar">
+</header>
 
-            <div class="left-top">
-                <div class="page-title" id="topTitle">Ana Sayfa</div>
 
-                <div class="search">
-                    <span>🔎</span>
-                    <input
-                        type="text"
-                        placeholder="ERP içinde ara..."
-                        oninput="globalSearch(this.value)"
-                    >
-                </div>
+<section class="content">
+
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="page active">
+
+    <div class="heading">
+        <h1>Yönetim Paneli</h1>
+        <p>Arda ERP işletmenizin günlük durum özeti.</p>
+    </div>
+
+
+    <div class="kpis">
+
+        <div class="kpi">
+            <div class="kpi-label">Ürün Kartı</div>
+            <div id="kpiProducts" class="kpi-value">0</div>
+            <div class="kpi-foot">Tanımlı ürün</div>
+        </div>
+
+        <div class="kpi">
+            <div class="kpi-label">Toplam Stok</div>
+            <div id="kpiStock" class="kpi-value">0</div>
+            <div class="kpi-foot">Toplam miktar</div>
+        </div>
+
+        <div class="kpi">
+            <div class="kpi-label">Stok Değeri</div>
+            <div id="kpiValue" class="kpi-value">₺0</div>
+            <div class="kpi-foot">Alış maliyeti</div>
+        </div>
+
+        <div class="kpi">
+            <div class="kpi-label">Kritik Stok</div>
+            <div id="kpiCritical" class="kpi-value">0</div>
+            <div class="kpi-foot">Müdahale gerekli</div>
+        </div>
+
+        <div class="kpi">
+            <div class="kpi-label">Açık Üretim</div>
+            <div id="kpiProduction" class="kpi-value">0</div>
+            <div class="kpi-foot">Bekleyen üretim</div>
+        </div>
+
+    </div>
+
+
+    <div class="grid-2">
+
+        <div class="card">
+
+            <div class="card-head">
+                <h3>Hızlı İşlemler</h3>
             </div>
 
-            <div class="top-actions">
-                <button class="top-btn" title="Yenile" onclick="location.reload()">↻</button>
-                <button class="top-btn" title="Bildirimler" onclick="alert('Bildirim merkezi hazırlanıyor.')">🔔</button>
+            <div class="card-body">
 
-                <div class="user">
-                    <div class="avatar">AY</div>
-                    <div class="user-info">
-                        <strong>Arda Y.</strong>
-                        <span>Yönetici</span>
-                    </div>
-                </div>
-            </div>
+                <div class="quick-grid">
 
-        </header>
-
-        <section class="content">
-
-            <!-- DASHBOARD -->
-            <div id="dashboard" class="page active">
-
-                <div class="heading">
-                    <h1>Hoş Geldiniz 👋</h1>
-                    <p>Arda ERP üretim yönetim paneline hoş geldiniz.</p>
-                </div>
-
-                <div class="kpi-grid">
-
-                    <div class="kpi">
-                        <div class="kpi-top">
-                            <span class="kpi-label">Toplam Ürün</span>
-                            <div class="kpi-icon">📦</div>
-                        </div>
-                        <div class="kpi-value" id="dashProducts">0</div>
-                        <div class="kpi-bottom">Tanımlı stok kartı</div>
-                    </div>
-
-                    <div class="kpi">
-                        <div class="kpi-top">
-                            <span class="kpi-label">Toplam Stok</span>
-                            <div class="kpi-icon">📊</div>
-                        </div>
-                        <div class="kpi-value" id="dashStock">0</div>
-                        <div class="kpi-bottom">Toplam miktar</div>
-                    </div>
-
-                    <div class="kpi">
-                        <div class="kpi-top">
-                            <span class="kpi-label">Stok Değeri</span>
-                            <div class="kpi-icon">💰</div>
-                        </div>
-                        <div class="kpi-value" id="dashValue">₺0,00</div>
-                        <div class="kpi-bottom">Alış fiyatı üzerinden</div>
-                    </div>
-
-                    <div class="kpi">
-                        <div class="kpi-top">
-                            <span class="kpi-label">Kritik Stok</span>
-                            <div class="kpi-icon">⚠️</div>
-                        </div>
-                        <div class="kpi-value" id="dashCritical">0</div>
-                        <div class="kpi-bottom">Minimum seviyenin altında</div>
-                    </div>
-
-                </div>
-
-                <div class="grid-2">
-
-                    <div class="card">
-
-                        <div class="card-header">
-                            <h3>Hızlı İşlemler</h3>
-                        </div>
-
-                        <div class="card-body">
-
-                            <div class="quick-grid">
-
-                                <button class="quick-btn" onclick="openProductModal()">
-                                    ➕
-                                    <strong>Yeni Ürün</strong>
-                                    <span>Stok kartı oluştur</span>
-                                </button>
-
-                                <button class="quick-btn" onclick="showPage('stock',null)">
-                                    📦
-                                    <strong>Stok Yönetimi</strong>
-                                    <span>Stok kartlarını yönet</span>
-                                </button>
-
-                                <button class="quick-btn" onclick="showPage('production',null)">
-                                    🏭
-                                    <strong>Üretim Emri</strong>
-                                    <span>Yeni üretim başlat</span>
-                                </button>
-
-                                <button class="quick-btn" onclick="showPage('sales',null)">
-                                    🧾
-                                    <strong>Satış Siparişi</strong>
-                                    <span>Yeni sipariş oluştur</span>
-                                </button>
-
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="card">
-
-                        <div class="card-header">
-                            <h3>Kritik Stoklar</h3>
-                            <button class="link-btn" onclick="showPage('stock',null)">Tümünü Gör</button>
-                        </div>
-
-                        <div class="card-body">
-                            <div id="criticalList" class="alert-list"></div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-                <div class="card" style="margin-top:20px">
-
-                    <div class="card-header">
-                        <h3>Son Eklenen Ürünler</h3>
-                        <button class="link-btn" onclick="showPage('stock',null)">Stok Yönetimi</button>
-                    </div>
-
-                    <div id="recentProducts"></div>
-
-                </div>
-
-            </div>
-
-            <!-- STOCK -->
-            <div id="stock" class="page">
-
-                <div class="heading">
-                    <h1>Stok & Depo Yönetimi</h1>
-                    <p>Ürün kartları, stok miktarları ve stok hareketlerini yönetin.</p>
-                </div>
-
-                <div class="toolbar">
-
-                    <div class="toolbar-left">
-                        <input
-                            id="stockSearch"
-                            class="form-control"
-                            style="width:260px"
-                            placeholder="Ürün kodu veya adı ara..."
-                            oninput="renderProducts()"
-                        >
-
-                        <select id="categoryFilter" class="form-control" onchange="renderProducts()">
-                            <option value="">Tüm Kategoriler</option>
-                        </select>
-                    </div>
-
-                    <div class="toolbar-right">
-                        <button class="btn" onclick="exportProducts()">⬇ Excel/CSV</button>
-                        <button class="btn primary" onclick="openProductModal()">＋ Yeni Ürün</button>
-                    </div>
-
-                </div>
-
-                <div class="card">
-
-                    <div class="table-wrap">
-
-                        <table>
-
-                            <thead>
-                                <tr>
-                                    <th>Kod</th>
-                                    <th>Ürün</th>
-                                    <th>Kategori</th>
-                                    <th>Birim</th>
-                                    <th>Stok</th>
-                                    <th>Min. Stok</th>
-                                    <th>Alış</th>
-                                    <th>Satış</th>
-                                    <th>Durum</th>
-                                    <th>İşlem</th>
-                                </tr>
-                            </thead>
-
-                            <tbody id="productTable"></tbody>
-
-                        </table>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- PRODUCTION -->
-            <div id="production" class="page">
-
-                <div class="heading">
-                    <h1>Üretim Yönetimi</h1>
-                    <p>Üretim emirleri, ürün ağaçları, rotalar ve iş istasyonları.</p>
-                </div>
-
-                <div class="module-placeholder">
-                    <div class="big">🏭</div>
-                    <h2>Üretim Modülü</h2>
-                    <p>
-                        Bu alanı bir sonraki aşamada gerçek üretim modülüne
-                        dönüştüreceğiz. Ürün ağacı, üretim emri, hammadde
-                        tüketimi ve mamul üretimi burada yönetilecek.
-                    </p>
-                    <br>
-                    <button class="btn primary" onclick="alert('Üretim Emri modülü bir sonraki aşamada açılacak.')">
-                        ＋ Yeni Üretim Emri
+                    <button class="quick" onclick="openProductModal()">
+                        📦
+                        <b>Yeni Ürün</b>
+                        <span>Stok kartı oluştur</span>
                     </button>
-                </div>
 
-            </div>
+                    <button class="quick" onclick="showPage('bom')">
+                        🌳
+                        <b>Ürün Ağacı</b>
+                        <span>Reçete oluştur</span>
+                    </button>
 
-            <!-- PURCHASE -->
-            <div id="purchase" class="page">
+                    <button class="quick" onclick="openProductionModal()">
+                        🏭
+                        <b>Üretim Emri</b>
+                        <span>Yeni üretim başlat</span>
+                    </button>
 
-                <div class="heading">
-                    <h1>Satın Alma</h1>
-                    <p>Tedarikçi, satın alma talepleri ve sipariş yönetimi.</p>
-                </div>
+                    <button class="quick" onclick="showPage('purchase')">
+                        🛒
+                        <b>Satın Alma</b>
+                        <span>Yeni satın alma</span>
+                    </button>
 
-                <div class="module-placeholder">
-                    <div class="big">🛒</div>
-                    <h2>Satın Alma Modülü</h2>
-                    <p>
-                        Satın alma talebi → tedarikçi → sipariş → mal kabul
-                        akışını burada kuracağız.
-                    </p>
-                </div>
+                    <button class="quick" onclick="showPage('sales')">
+                        🧾
+                        <b>Satış Siparişi</b>
+                        <span>Yeni sipariş</span>
+                    </button>
 
-            </div>
-
-            <!-- SALES -->
-            <div id="sales" class="page">
-
-                <div class="heading">
-                    <h1>Satış Yönetimi</h1>
-                    <p>Teklif, sipariş, sevkiyat ve satış süreçleri.</p>
-                </div>
-
-                <div class="module-placeholder">
-                    <div class="big">🧾</div>
-                    <h2>Satış Modülü</h2>
-                    <p>
-                        Müşteri → teklif → satış siparişi → sevkiyat
-                        → faturalama sürecini burada kuracağız.
-                    </p>
-                </div>
-
-            </div>
-
-            <!-- CURRENT -->
-            <div id="current" class="page">
-
-                <div class="heading">
-                    <h1>Cari Hesaplar</h1>
-                    <p>Müşteri ve tedarikçi hesaplarını yönetin.</p>
-                </div>
-
-                <div class="module-placeholder">
-                    <div class="big">👥</div>
-                    <h2>Cari Hesap Modülü</h2>
-                    <p>
-                        Cari kartlar, borç-alacak hareketleri,
-                        tahsilat ve ödeme işlemleri eklenecek.
-                    </p>
-                </div>
-
-            </div>
-
-            <!-- FINANCE -->
-            <div id="finance" class="page">
-
-                <div class="heading">
-                    <h1>Finans Yönetimi</h1>
-                    <p>Kasa, banka, tahsilat, ödeme ve finansal hareketler.</p>
-                </div>
-
-                <div class="module-placeholder">
-                    <div class="big">💰</div>
-                    <h2>Finans Modülü</h2>
-                    <p>
-                        Kasa, banka, tahsilat, ödeme ve nakit akışı
-                        ekranlarını daha sonra ekleyeceğiz.
-                    </p>
-                </div>
-
-            </div>
-
-            <!-- SHIPMENT -->
-            <div id="shipment" class="page">
-
-                <div class="heading">
-                    <h1>Sevkiyat</h1>
-                    <p>Depodan çıkan ürünleri ve sevkiyat süreçlerini yönetin.</p>
-                </div>
-
-                <div class="module-placeholder">
-                    <div class="big">🚚</div>
-                    <h2>Sevkiyat Modülü</h2>
-                    <p>
-                        Sevk emri, araç, irsaliye ve teslimat süreçleri
-                        burada yönetilecek.
-                    </p>
-                </div>
-
-            </div>
-
-            <!-- REPORTS -->
-            <div id="reports" class="page">
-
-                <div class="heading">
-                    <h1>Raporlar</h1>
-                    <p>ERP verilerini özetleyen yönetim raporları.</p>
-                </div>
-
-                <div class="kpi-grid">
-
-                    <div class="kpi">
-                        <span class="kpi-label">Ürün Sayısı</span>
-                        <div class="kpi-value" id="reportProducts">0</div>
-                    </div>
-
-                    <div class="kpi">
-                        <span class="kpi-label">Toplam Stok</span>
-                        <div class="kpi-value" id="reportStock">0</div>
-                    </div>
-
-                    <div class="kpi">
-                        <span class="kpi-label">Stok Değeri</span>
-                        <div class="kpi-value" id="reportValue">₺0,00</div>
-                    </div>
-
-                    <div class="kpi">
-                        <span class="kpi-label">Kritik Ürün</span>
-                        <div class="kpi-value" id="reportCritical">0</div>
-                    </div>
-
-                </div>
-
-                <div class="card" style="margin-top:20px">
-
-                    <div class="card-header">
-                        <h3>Stok Raporu</h3>
-                    </div>
-
-                    <div class="table-wrap">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Kod</th>
-                                    <th>Ürün</th>
-                                    <th>Stok</th>
-                                    <th>Min. Stok</th>
-                                    <th>Stok Değeri</th>
-                                </tr>
-                            </thead>
-
-                            <tbody id="reportTable"></tbody>
-                        </table>
-                    </div>
+                    <button class="quick" onclick="showPage('reports')">
+                        📊
+                        <b>Raporlar</b>
+                        <span>Yönetim raporları</span>
+                    </button>
 
                 </div>
 
             </div>
 
-            <!-- SETTINGS -->
-            <div id="settings" class="page">
+        </div>
 
-                <div class="heading">
-                    <h1>Ayarlar</h1>
-                    <p>Arda ERP sistem ayarları.</p>
+
+        <div class="card">
+
+            <div class="card-head">
+                <h3>Uyarılar</h3>
+            </div>
+
+            <div id="dashboardAlerts" class="card-body"></div>
+
+        </div>
+
+    </div>
+
+
+    <div class="grid-3">
+
+        <div class="card">
+
+            <div class="card-head">
+                <h3>Stok Özeti</h3>
+            </div>
+
+            <div class="card-body">
+
+                <div class="stat-row">
+                    <span>Hammadde</span>
+                    <strong id="rawCount">0</strong>
                 </div>
 
-                <div class="card">
+                <div class="stat-row">
+                    <span>Yarı Mamul</span>
+                    <strong id="semiCount">0</strong>
+                </div>
 
-                    <div class="card-header">
-                        <h3>Veri Yönetimi</h3>
-                    </div>
-
-                    <div class="card-body">
-
-                        <p style="font-size:13px;color:#69768a;margin-bottom:15px">
-                            Şu anda veriler tarayıcınızda saklanmaktadır.
-                        </p>
-
-                        <button class="btn danger" onclick="clearAllData()">
-                            Tüm Stok Verilerini Sil
-                        </button>
-
-                    </div>
-
+                <div class="stat-row">
+                    <span>Mamul</span>
+                    <strong id="finishedCount">0</strong>
                 </div>
 
             </div>
 
-        </section>
+        </div>
 
-    </main>
+
+        <div class="card">
+
+            <div class="card-head">
+                <h3>Üretim Özeti</h3>
+            </div>
+
+            <div class="card-body">
+
+                <div class="stat-row">
+                    <span>Planlanan</span>
+                    <strong id="plannedProduction">0</strong>
+                </div>
+
+                <div class="stat-row">
+                    <span>Devam Eden</span>
+                    <strong id="runningProduction">0</strong>
+                </div>
+
+                <div class="stat-row">
+                    <span>Tamamlanan</span>
+                    <strong id="completedProduction">0</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-head">
+                <h3>Sistem</h3>
+            </div>
+
+            <div class="card-body">
+
+                <div class="stat-row">
+                    <span>Ürün Ağacı</span>
+                    <strong id="bomCount">0</strong>
+                </div>
+
+                <div class="stat-row">
+                    <span>Müşteri</span>
+                    <strong id="customerCount">0</strong>
+                </div>
+
+                <div class="stat-row">
+                    <span>Tedarikçi</span>
+                    <strong id="supplierCount">0</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="card" style="margin-top:18px">
+
+        <div class="card-head">
+            <h3>Son İşlemler</h3>
+        </div>
+
+        <div id="recentActivities"></div>
+
+    </div>
 
 </div>
 
 
-<!-- MODAL -->
+<!-- STOCK -->
+<div id="stock" class="page">
 
-<div id="productModal" class="modal-bg">
+    <div class="heading">
+        <h1>Stok & Depo Yönetimi</h1>
+        <p>Ürün, stok ve depo hareketlerini yönetin.</p>
+    </div>
 
-    <div class="modal">
+    <div class="toolbar">
 
-        <div class="modal-header">
-            <h3 id="modalTitle">Yeni Ürün</h3>
-            <button class="close" onclick="closeProductModal()">×</button>
-        </div>
+        <div class="toolbar-left">
 
-        <div class="modal-body">
+            <input
+                id="stockSearch"
+                class="form-control"
+                style="width:230px"
+                placeholder="Kod veya ürün ara..."
+                oninput="renderProducts()"
+            >
 
-            <input type="hidden" id="editId">
+            <select
+                id="stockTypeFilter"
+                class="form-control"
+                onchange="renderProducts()"
+            >
+                <option value="">Tüm Tipler</option>
+                <option value="Hammadde">Hammadde</option>
+                <option value="Yarı Mamul">Yarı Mamul</option>
+                <option value="Mamul">Mamul</option>
+            </select>
 
-            <div class="form-grid">
-
-                <div class="form-group">
-                    <label>ÜRÜN KODU</label>
-                    <input id="productCode" class="form-control" placeholder="Örn: HM-001">
-                </div>
-
-                <div class="form-group">
-                    <label>ÜRÜN ADI</label>
-                    <input id="productName" class="form-control" placeholder="Ürün adı">
-                </div>
-
-                <div class="form-group">
-                    <label>KATEGORİ</label>
-                    <input id="productCategory" class="form-control" placeholder="Hammadde, Mamul...">
-                </div>
-
-                <div class="form-group">
-                    <label>BİRİM</label>
-                    <select id="productUnit" class="form-control">
-                        <option>Adet</option>
-                        <option>Kg</option>
-                        <option>Gram</option>
-                        <option>Metre</option>
-                        <option>Lt</option>
-                        <option>Set</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>STOK MİKTARI</label>
-                    <input id="productStock" type="number" step="0.01" class="form-control" value="0">
-                </div>
-
-                <div class="form-group">
-                    <label>MİNİMUM STOK</label>
-                    <input id="productMinStock" type="number" step="0.01" class="form-control" value="0">
-                </div>
-
-                <div class="form-group">
-                    <label>ALIŞ FİYATI</label>
-                    <input id="purchasePrice" type="number" step="0.01" class="form-control" value="0">
-                </div>
-
-                <div class="form-group">
-                    <label>SATIŞ FİYATI</label>
-                    <input id="salePrice" type="number" step="0.01" class="form-control" value="0">
-                </div>
-
-            </div>
+            <select
+                id="categoryFilter"
+                class="form-control"
+                onchange="renderProducts()"
+            >
+                <option value="">Tüm Kategoriler</option>
+            </select>
 
         </div>
 
-        <div class="modal-footer">
-            <button class="btn" onclick="closeProductModal()">Vazgeç</button>
-            <button class="btn primary" onclick="saveProduct()">Kaydet</button>
+        <div class="toolbar-right">
+
+            <button class="btn" onclick="stockMovementModal()">
+                ↕ Stok Hareketi
+            </button>
+
+            <button class="btn" onclick="exportCSV()">
+                ⬇ Excel/CSV
+            </button>
+
+            <button class="btn primary" onclick="openProductModal()">
+                ＋ Yeni Ürün
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="table-wrap">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Kod</th>
+                        <th>Ürün</th>
+                        <th>Tip</th>
+                        <th>Kategori</th>
+                        <th>Birim</th>
+                        <th>Stok</th>
+                        <th>Min</th>
+                        <th>Alış</th>
+                        <th>Satış</th>
+                        <th>Durum</th>
+                        <th>İşlem</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="productTable"></tbody>
+
+            </table>
+
         </div>
 
     </div>
@@ -1311,25 +1189,937 @@ td{
 </div>
 
 
+<!-- BOM -->
+<div id="bom" class="page">
+
+    <div class="heading">
+        <h1>Ürün Ağaçları / Reçeteler</h1>
+        <p>Bir mamulün üretiminde kullanılacak hammaddeleri tanımlayın.</p>
+    </div>
+
+    <div class="toolbar">
+
+        <div class="toolbar-left">
+
+            <select
+                id="bomProductSelect"
+                class="form-control"
+                onchange="renderBOM()"
+                style="min-width:280px"
+            >
+            </select>
+
+        </div>
+
+        <div class="toolbar-right">
+            <button class="btn primary" onclick="openBOMModal()">
+                ＋ Reçete Oluştur
+            </button>
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <div class="card-head">
+            <h3>Seçili Ürünün Reçetesi</h3>
+            <span id="bomSummary"></span>
+        </div>
+
+        <div id="bomTable"></div>
+
+    </div>
+
+</div>
+
+
+<!-- PRODUCTION -->
+<div id="production" class="page">
+
+    <div class="heading">
+        <h1>Üretim Emirleri</h1>
+        <p>Planlama, hammadde kontrolü ve üretim takibi.</p>
+    </div>
+
+    <div class="toolbar">
+
+        <div class="toolbar-left">
+
+            <select id="productionFilter" class="form-control" onchange="renderProduction()">
+                <option value="">Tüm Durumlar</option>
+                <option value="Planlandı">Planlandı</option>
+                <option value="Devam Ediyor">Devam Ediyor</option>
+                <option value="Tamamlandı">Tamamlandı</option>
+                <option value="İptal">İptal</option>
+            </select>
+
+        </div>
+
+        <div class="toolbar-right">
+
+            <button class="btn primary" onclick="openProductionModal()">
+                ＋ Yeni Üretim Emri
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="card">
+
+        <div class="table-wrap">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Emir No</th>
+                        <th>Mamul</th>
+                        <th>Miktar</th>
+                        <th>Tarih</th>
+                        <th>Durum</th>
+                        <th>Hammadde</th>
+                        <th>İşlem</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="productionTable"></tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- WORKCENTER -->
+<div id="workcenter" class="page">
+
+    <div class="heading">
+        <h1>İş İstasyonları</h1>
+        <p>Makine ve üretim istasyonlarının temel tanımlarını yönetin.</p>
+    </div>
+
+    <div class="toolbar">
+        <button class="btn primary" onclick="addWorkCenter()">
+            ＋ İş İstasyonu
+        </button>
+    </div>
+
+    <div class="card">
+
+        <div id="workcenterList"></div>
+
+    </div>
+
+</div>
+
+
+<!-- PRODUCTION REPORT -->
+<div id="productionReport" class="page">
+
+    <div class="heading">
+        <h1>Üretim Raporu</h1>
+        <p>Üretim emirlerinin durum ve miktar analizi.</p>
+    </div>
+
+    <div class="kpis">
+
+        <div class="kpi">
+            <div class="kpi-label">Toplam Emir</div>
+            <div id="prTotal" class="kpi-value">0</div>
+        </div>
+
+        <div class="kpi">
+            <div class="kpi-label">Planlandı</div>
+            <div id="prPlanned" class="kpi-value">0</div>
+        </div>
+
+        <div class="kpi">
+            <div class="kpi-label">Devam Ediyor</div>
+            <div id="prRunning" class="kpi-value">0</div>
+        </div>
+
+        <div class="kpi">
+            <div class="kpi-label">Tamamlandı</div>
+            <div id="prCompleted" class="kpi-value">0</div>
+        </div>
+
+        <div class="kpi">
+            <div class="kpi-label">Toplam Üretim</div>
+            <div id="prQuantity" class="kpi-value">0</div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- PURCHASE -->
+<div id="purchase" class="page">
+
+    <div class="heading">
+        <h1>Satın Alma</h1>
+        <p>Tedarikçi ve satın alma süreçleri.</p>
+    </div>
+
+    <div class="grid-2">
+
+        <div class="card">
+
+            <div class="card-head">
+                <h3>Tedarikçiler</h3>
+
+                <button class="btn primary small" onclick="openPartyModal('supplier')">
+                    ＋ Tedarikçi
+                </button>
+            </div>
+
+            <div id="supplierList"></div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-head">
+                <h3>Satın Alma Siparişleri</h3>
+
+                <button class="btn primary small" onclick="newPurchaseOrder()">
+                    ＋ Yeni Sipariş
+                </button>
+
+            </div>
+
+            <div id="purchaseList"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- SALES -->
+<div id="sales" class="page">
+
+    <div class="heading">
+        <h1>Satış Yönetimi</h1>
+        <p>Müşteri, sipariş ve satış süreçleri.</p>
+    </div>
+
+    <div class="grid-2">
+
+        <div class="card">
+
+            <div class="card-head">
+                <h3>Müşteriler</h3>
+
+                <button class="btn primary small" onclick="openPartyModal('customer')">
+                    ＋ Müşteri
+                </button>
+            </div>
+
+            <div id="customerList"></div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-head">
+                <h3>Satış Siparişleri</h3>
+
+                <button class="btn primary small" onclick="newSalesOrder()">
+                    ＋ Yeni Sipariş
+                </button>
+
+            </div>
+
+            <div id="salesList"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- CURRENT -->
+<div id="current" class="page">
+
+    <div class="heading">
+        <h1>Cari Hesaplar</h1>
+        <p>Müşteri ve tedarikçi borç/alacak hareketleri.</p>
+    </div>
+
+    <div class="kpis">
+
+        <div class="kpi">
+            <div class="kpi-label">Müşteri</div>
+            <div id="currentCustomers" class="kpi-value">0</div>
+        </div>
+
+        <div class="kpi">
+            <div class="kpi-label">Tedarikçi</div>
+            <div id="currentSuppliers" class="kpi-value">0</div>
+        </div>
+
+        <div class="kpi">
+            <div class="kpi-label">Toplam Borç</div>
+            <div id="currentDebit" class="kpi-value">₺0</div>
+        </div>
+
+        <div class="kpi">
+            <div class="kpi-label">Toplam Alacak</div>
+            <div id="currentCredit" class="kpi-value">₺0</div>
+        </div>
+
+        <div class="kpi">
+            <div class="kpi-label">Net Bakiye</div>
+            <div id="currentNet" class="kpi-value">₺0</div>
+        </div>
+
+    </div>
+
+    <div class="card" style="margin-top:18px">
+
+        <div class="card-head">
+            <h3>Cari Hareketler</h3>
+
+            <button class="btn primary" onclick="newCurrentMovement()">
+                ＋ Cari Hareket
+            </button>
+        </div>
+
+        <div id="currentMovementList"></div>
+
+    </div>
+
+</div>
+
+
+<!-- SHIPMENT -->
+<div id="shipment" class="page">
+
+    <div class="heading">
+        <h1>Sevkiyat</h1>
+        <p>Depodan müşteriye gönderilen ürünleri takip edin.</p>
+    </div>
+
+    <div class="placeholder">
+        <div class="big">🚚</div>
+        <h2>Sevkiyat Merkezi</h2>
+        <p>
+            Sevkiyat emirleri, teslimatlar, araç bilgileri,
+            irsaliye ve teslimat takibini burada büyüteceğiz.
+        </p>
+        <br>
+        <button class="btn primary" onclick="alert('Sevkiyat motoru bir sonraki geliştirmede aktif olacak.')">
+            Sevkiyat Oluştur
+        </button>
+    </div>
+
+</div>
+
+
+<!-- FINANCE -->
+<div id="finance" class="page">
+
+    <div class="heading">
+        <h1>Finans Yönetimi</h1>
+        <p>Kasa, banka, tahsilat, ödeme ve nakit akışı.</p>
+    </div>
+
+    <div class="kpis">
+
+        <div class="kpi">
+            <div class="kpi-label">Kasa</div>
+            <div id="cashTotal" class="kpi-value">₺0</div>
+        </div>
+
+        <div class="kpi">
+            <div class="kpi-label">Banka</div>
+            <div id="bankTotal" class="kpi-value">₺0</div>
+        </div>
+
+        <div class="kpi">
+            <div class="kpi-label">Toplam Gelir</div>
+            <div id="financeIncome" class="kpi-value">₺0</div>
+        </div>
+
+        <div class="kpi">
+            <div class="kpi-label">Toplam Gider</div>
+            <div id="financeExpense" class="kpi-value">₺0</div>
+        </div>
+
+        <div class="kpi">
+            <div class="kpi-label">Net</div>
+            <div id="financeNet" class="kpi-value">₺0</div>
+        </div>
+
+    </div>
+
+    <div class="card" style="margin-top:18px">
+
+        <div class="card-head">
+
+            <h3>Finans Hareketleri</h3>
+
+            <button class="btn primary" onclick="newFinanceMovement()">
+                ＋ Finans Hareketi
+            </button>
+
+        </div>
+
+        <div id="financeList"></div>
+
+    </div>
+
+</div>
+
+
+<!-- MAINTENANCE -->
+<div id="maintenance" class="page">
+
+    <div class="heading">
+        <h1>Bakım Yönetimi</h1>
+        <p>Makine ve ekipman bakım kayıtları.</p>
+    </div>
+
+    <div class="placeholder">
+        <div class="big">🔧</div>
+        <h2>Bakım Merkezi</h2>
+        <p>
+            Makine kartları, arıza kayıtları,
+            bakım planları ve bakım geçmişi burada tutulacak.
+        </p>
+        <br>
+        <button class="btn primary" onclick="newMaintenance()">
+            ＋ Bakım Kaydı
+        </button>
+    </div>
+
+</div>
+
+
+<!-- QUALITY -->
+<div id="quality" class="page">
+
+    <div class="heading">
+        <h1>Kalite Yönetimi</h1>
+        <p>Üretim ve mal kabul kalite kontrolleri.</p>
+    </div>
+
+    <div class="placeholder">
+        <div class="big">✅</div>
+        <h2>Kalite Merkezi</h2>
+        <p>
+            Kalite kontrol planları, kabul/red kararları,
+            ölçüm değerleri ve uygunsuzluk kayıtları burada tutulacak.
+        </p>
+        <br>
+        <button class="btn primary" onclick="newQualityRecord()">
+            ＋ Kalite Kaydı
+        </button>
+    </div>
+
+</div>
+
+
+<!-- REPORTS -->
+<div id="reports" class="page">
+
+    <div class="heading">
+        <h1>Raporlar</h1>
+        <p>Arda ERP yönetim ve operasyon raporları.</p>
+    </div>
+
+    <div class="kpis">
+
+        <div class="kpi">
+            <div class="kpi-label">Ürün</div>
+            <div id="reportProducts" class="kpi-value">0</div>
+        </div>
+
+        <div class="kpi">
+            <div class="kpi-label">Stok</div>
+            <div id="reportStock" class="kpi-value">0</div>
+        </div>
+
+        <div class="kpi">
+            <div class="kpi-label">Stok Değeri</div>
+            <div id="reportValue" class="kpi-value">₺0</div>
+        </div>
+
+        <div class="kpi">
+            <div class="kpi-label">Üretim</div>
+            <div id="reportProduction" class="kpi-value">0</div>
+        </div>
+
+        <div class="kpi">
+            <div class="kpi-label">Kritik Stok</div>
+            <div id="reportCritical" class="kpi-value">0</div>
+        </div>
+
+    </div>
+
+    <div class="card" style="margin-top:18px">
+
+        <div class="card-head">
+            <h3>Stok Raporu</h3>
+            <button class="btn" onclick="exportCSV()">⬇ Dışa Aktar</button>
+        </div>
+
+        <div id="reportTable"></div>
+
+    </div>
+
+</div>
+
+
+<!-- SETTINGS -->
+<div id="settings" class="page">
+
+    <div class="heading">
+        <h1>Ayarlar</h1>
+        <p>Arda ERP sistem ayarları ve veri yönetimi.</p>
+    </div>
+
+    <div class="grid-2">
+
+        <div class="card">
+
+            <div class="card-head">
+                <h3>Firma Bilgileri</h3>
+            </div>
+
+            <div class="card-body">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label>FİRMA ADI</label>
+                        <input id="companyName" class="form-control" value="Arda Üretim Ltd. Şti.">
+                    </div>
+
+                    <div class="form-group">
+                        <label>VERGİ NUMARASI</label>
+                        <input id="taxNo" class="form-control" placeholder="Vergi no">
+                    </div>
+
+                    <div class="form-group full">
+                        <label>ADRES</label>
+                        <textarea id="companyAddress" class="form-control" rows="3"></textarea>
+                    </div>
+
+                </div>
+
+                <br>
+
+                <button class="btn primary" onclick="saveCompanySettings()">
+                    Kaydet
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-head">
+                <h3>Veri Yönetimi</h3>
+            </div>
+
+            <div class="card-body">
+
+                <div class="alert warn">
+                    Veriler şu anda tarayıcıda saklanmaktadır.
+                </div>
+
+                <button class="btn" onclick="backupData()">
+                    💾 Yedek Al
+                </button>
+
+                <button class="btn red" onclick="clearAllData()">
+                    Tüm Verileri Sil
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+</main>
+</div>
+
+
+<!-- PRODUCT MODAL -->
+<div id="productModal" class="modal-backdrop">
+
+<div class="modal">
+
+    <div class="modal-head">
+        <h3 id="productModalTitle">Yeni Ürün</h3>
+        <button class="modal-close" onclick="closeModal('productModal')">×</button>
+    </div>
+
+    <div class="modal-body">
+
+        <input type="hidden" id="productId">
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label>ÜRÜN KODU</label>
+                <input id="productCode" class="form-control" placeholder="HM-001">
+            </div>
+
+            <div class="form-group">
+                <label>ÜRÜN ADI</label>
+                <input id="productName" class="form-control" placeholder="Ürün adı">
+            </div>
+
+            <div class="form-group">
+                <label>ÜRÜN TİPİ</label>
+                <select id="productType" class="form-control">
+                    <option>Hammadde</option>
+                    <option>Yarı Mamul</option>
+                    <option>Mamul</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>KATEGORİ</label>
+                <input id="productCategory" class="form-control" placeholder="Kategori">
+            </div>
+
+            <div class="form-group">
+                <label>BİRİM</label>
+                <select id="productUnit" class="form-control">
+                    <option>Adet</option>
+                    <option>Kg</option>
+                    <option>Gram</option>
+                    <option>Metre</option>
+                    <option>Lt</option>
+                    <option>Set</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>DEPO</label>
+                <select id="productWarehouse" class="form-control">
+                    <option>Merkez Depo</option>
+                    <option>Hammadde Deposu</option>
+                    <option>Mamul Deposu</option>
+                    <option>Sevkiyat Deposu</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>STOK MİKTARI</label>
+                <input id="productStock" type="number" step="0.01" class="form-control" value="0">
+            </div>
+
+            <div class="form-group">
+                <label>MİNİMUM STOK</label>
+                <input id="productMinStock" type="number" step="0.01" class="form-control" value="0">
+            </div>
+
+            <div class="form-group">
+                <label>ALIŞ FİYATI</label>
+                <input id="purchasePrice" type="number" step="0.01" class="form-control" value="0">
+            </div>
+
+            <div class="form-group">
+                <label>SATIŞ FİYATI</label>
+                <input id="salePrice" type="number" step="0.01" class="form-control" value="0">
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="modal-foot">
+        <button class="btn" onclick="closeModal('productModal')">
+            Vazgeç
+        </button>
+
+        <button class="btn primary" onclick="saveProduct()">
+            Kaydet
+        </button>
+    </div>
+
+</div>
+</div>
+
+
+<!-- BOM MODAL -->
+<div id="bomModal" class="modal-backdrop">
+
+<div class="modal">
+
+    <div class="modal-head">
+        <h3>Ürün Ağacı Oluştur</h3>
+        <button class="modal-close" onclick="closeModal('bomModal')">×</button>
+    </div>
+
+    <div class="modal-body">
+
+        <div class="form-group">
+
+            <label>MAMUL</label>
+
+            <select id="bomParent" class="form-control">
+            </select>
+
+        </div>
+
+        <br>
+
+        <div class="alert info">
+            Aşağıya üretim sırasında kullanılacak hammaddeleri ekleyin.
+        </div>
+
+        <div id="bomRows"></div>
+
+        <button class="btn" onclick="addBOMRow()">
+            ＋ Hammadde Ekle
+        </button>
+
+    </div>
+
+    <div class="modal-foot">
+
+        <button class="btn" onclick="closeModal('bomModal')">
+            Vazgeç
+        </button>
+
+        <button class="btn primary" onclick="saveBOM()">
+            Reçeteyi Kaydet
+        </button>
+
+    </div>
+
+</div>
+</div>
+
+
+<!-- PRODUCTION MODAL -->
+<div id="productionModal" class="modal-backdrop">
+
+<div class="modal">
+
+    <div class="modal-head">
+        <h3>Yeni Üretim Emri</h3>
+        <button class="modal-close" onclick="closeModal('productionModal')">×</button>
+    </div>
+
+    <div class="modal-body">
+
+        <div class="form-grid">
+
+            <div class="form-group">
+
+                <label>MAMUL</label>
+
+                <select id="productionProduct" class="form-control">
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>ÜRETİLECEK MİKTAR</label>
+
+                <input
+                    id="productionQuantity"
+                    type="number"
+                    min="0.01"
+                    step="0.01"
+                    class="form-control"
+                    value="1"
+                >
+
+            </div>
+
+        </div>
+
+        <br>
+
+        <div id="productionNeedPreview"></div>
+
+    </div>
+
+    <div class="modal-foot">
+
+        <button class="btn" onclick="closeModal('productionModal')">
+            Vazgeç
+        </button>
+
+        <button class="btn primary" onclick="createProductionOrder()">
+            Üretim Emri Oluştur
+        </button>
+
+    </div>
+
+</div>
+</div>
+
+
+<!-- PARTY MODAL -->
+<div id="partyModal" class="modal-backdrop">
+
+<div class="modal">
+
+    <div class="modal-head">
+        <h3 id="partyTitle">Cari Kart</h3>
+        <button class="modal-close" onclick="closeModal('partyModal')">×</button>
+    </div>
+
+    <div class="modal-body">
+
+        <input type="hidden" id="partyType">
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label>KOD</label>
+                <input id="partyCode" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>ÜNVAN / AD</label>
+                <input id="partyName" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>TELEFON</label>
+                <input id="partyPhone" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>E-POSTA</label>
+                <input id="partyEmail" class="form-control">
+            </div>
+
+            <div class="form-group full">
+                <label>ADRES</label>
+                <textarea id="partyAddress" class="form-control" rows="3"></textarea>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="modal-foot">
+
+        <button class="btn" onclick="closeModal('partyModal')">
+            Vazgeç
+        </button>
+
+        <button class="btn primary" onclick="saveParty()">
+            Kaydet
+        </button>
+
+    </div>
+
+</div>
+</div>
+
+
 <script>
 
-let products = JSON.parse(localStorage.getItem("ardaERP_products") || "[]");
+/* =========================
+   VERİLER
+========================= */
+
+let products = JSON.parse(
+    localStorage.getItem("ardaERP_products") || "[]"
+);
+
+let boms = JSON.parse(
+    localStorage.getItem("ardaERP_boms") || "[]"
+);
+
+let productionOrders = JSON.parse(
+    localStorage.getItem("ardaERP_production") || "[]"
+);
+
+let customers = JSON.parse(
+    localStorage.getItem("ardaERP_customers") || "[]"
+);
+
+let suppliers = JSON.parse(
+    localStorage.getItem("ardaERP_suppliers") || "[]"
+);
+
+let currentMovements = JSON.parse(
+    localStorage.getItem("ardaERP_current") || "[]"
+);
+
+let financeMovements = JSON.parse(
+    localStorage.getItem("ardaERP_finance") || "[]"
+);
+
+let activities = JSON.parse(
+    localStorage.getItem("ardaERP_activities") || "[]"
+);
+
+let workcenters = JSON.parse(
+    localStorage.getItem("ardaERP_workcenters") || "[]"
+);
+
+let purchaseOrders = JSON.parse(
+    localStorage.getItem("ardaERP_purchaseOrders") || "[]"
+);
+
+let salesOrders = JSON.parse(
+    localStorage.getItem("ardaERP_salesOrders") || "[]"
+);
+
+
+/* =========================
+   YARDIMCI
+========================= */
 
 function money(value){
-    return Number(value || 0).toLocaleString("tr-TR",{
-        style:"currency",
-        currency:"TRY"
-    });
-}
 
-function saveData(){
-    localStorage.setItem(
-        "ardaERP_products",
-        JSON.stringify(products)
+    return Number(value || 0).toLocaleString(
+        "tr-TR",
+        {
+            style:"currency",
+            currency:"TRY"
+        }
     );
 }
 
-function escapeHtml(value){
+function num(value){
+    return Number(value || 0);
+}
+
+function id(){
+    return Date.now().toString() +
+        Math.random().toString(36).slice(2,7);
+}
+
+function today(){
+
+    return new Date().toLocaleDateString("tr-TR");
+}
+
+function esc(value){
+
     return String(value ?? "")
         .replaceAll("&","&amp;")
         .replaceAll("<","&lt;")
@@ -1338,128 +2128,207 @@ function escapeHtml(value){
         .replaceAll("'","&#039;");
 }
 
+function saveAll(){
 
-/* SAYFA */
+    localStorage.setItem(
+        "ardaERP_products",
+        JSON.stringify(products)
+    );
 
-const pageTitles = {
+    localStorage.setItem(
+        "ardaERP_boms",
+        JSON.stringify(boms)
+    );
+
+    localStorage.setItem(
+        "ardaERP_production",
+        JSON.stringify(productionOrders)
+    );
+
+    localStorage.setItem(
+        "ardaERP_customers",
+        JSON.stringify(customers)
+    );
+
+    localStorage.setItem(
+        "ardaERP_suppliers",
+        JSON.stringify(suppliers)
+    );
+
+    localStorage.setItem(
+        "ardaERP_current",
+        JSON.stringify(currentMovements)
+    );
+
+    localStorage.setItem(
+        "ardaERP_finance",
+        JSON.stringify(financeMovements)
+    );
+
+    localStorage.setItem(
+        "ardaERP_activities",
+        JSON.stringify(activities)
+    );
+
+    localStorage.setItem(
+        "ardaERP_workcenters",
+        JSON.stringify(workcenters)
+    );
+
+    localStorage.setItem(
+        "ardaERP_purchaseOrders",
+        JSON.stringify(purchaseOrders)
+    );
+
+    localStorage.setItem(
+        "ardaERP_salesOrders",
+        JSON.stringify(salesOrders)
+    );
+}
+
+
+/* =========================
+   SAYFALAR
+========================= */
+
+const titles = {
+
     dashboard:"Ana Sayfa",
     stock:"Stok & Depo",
-    production:"Üretim",
+    bom:"Ürün Ağaçları",
+    production:"Üretim Emirleri",
+    workcenter:"İş İstasyonları",
+    productionReport:"Üretim Raporu",
     purchase:"Satın Alma",
     sales:"Satış",
     current:"Cari Hesaplar",
-    finance:"Finans",
     shipment:"Sevkiyat",
+    finance:"Finans",
+    maintenance:"Bakım",
+    quality:"Kalite",
     reports:"Raporlar",
     settings:"Ayarlar"
+
 };
 
-function showPage(pageId, clickedItem){
+function showPage(page,element=null){
 
-    document.querySelectorAll(".page").forEach(p=>{
-        p.classList.remove("active");
-    });
+    document.querySelectorAll(".page").forEach(
+        x=>x.classList.remove("active")
+    );
 
-    const page = document.getElementById(pageId);
+    const target = document.getElementById(page);
 
-    if(page){
-        page.classList.add("active");
+    if(target){
+        target.classList.add("active");
     }
 
     document.getElementById("topTitle").textContent =
-        pageTitles[pageId] || "Arda ERP";
+        titles[page] || "Arda ERP";
 
-    document.querySelectorAll(".menu-item").forEach(item=>{
-        item.classList.remove("active");
-    });
+    document.querySelectorAll(".nav-item").forEach(
+        x=>x.classList.remove("active")
+    );
 
-    if(clickedItem){
-        clickedItem.classList.add("active");
+    if(element){
+        element.classList.add("active");
     }
 
-    if(pageId === "stock"){
-        renderProducts();
+    if(page==="stock") renderProducts();
+    if(page==="bom") initializeBOMPage();
+    if(page==="production") renderProduction();
+    if(page==="workcenter") renderWorkcenters();
+    if(page==="productionReport") renderProductionReport();
+    if(page==="purchase"){
+        renderCustomersSuppliers();
+        renderPurchases();
     }
-
-    if(pageId === "reports"){
-        renderReports();
+    if(page==="sales"){
+        renderCustomersSuppliers();
+        renderSales();
     }
+    if(page==="current") renderCurrent();
+    if(page==="finance") renderFinance();
+    if(page==="reports") renderReports();
 
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
+    window.scrollTo(0,0);
 }
 
 function toggleSub(id){
-    const el = document.getElementById(id);
-    el.classList.toggle("open");
+
+    document
+        .getElementById(id)
+        .classList.toggle("open");
 }
 
 
-/* ÜRÜN MODAL */
+/* =========================
+   MODAL
+========================= */
 
-function openProductModal(productId = null){
+function closeModal(id){
 
-    document.getElementById("productModal").classList.add("show");
+    const modal =
+        document.getElementById(id);
+
+    if(modal){
+        modal.classList.remove("show");
+    }
+}
+
+
+/* =========================
+   ÜRÜNLER
+========================= */
+
+function openProductModal(productId=null){
+
+    document
+        .getElementById("productModal")
+        .classList.add("show");
+
+    document.getElementById("productId").value = "";
 
     if(productId){
 
-        const product = products.find(
-            p => p.id === productId
-        );
+        const p =
+            products.find(x=>x.id===productId);
 
-        if(!product) return;
+        if(!p) return;
 
-        document.getElementById("modalTitle").textContent =
-            "Ürün Düzenle";
+        document.getElementById(
+            "productModalTitle"
+        ).textContent = "Ürün Düzenle";
 
-        document.getElementById("editId").value =
-            product.id;
-
-        document.getElementById("productCode").value =
-            product.code;
-
-        document.getElementById("productName").value =
-            product.name;
-
-        document.getElementById("productCategory").value =
-            product.category;
-
-        document.getElementById("productUnit").value =
-            product.unit;
-
-        document.getElementById("productStock").value =
-            product.stock;
-
-        document.getElementById("productMinStock").value =
-            product.minStock;
-
-        document.getElementById("purchasePrice").value =
-            product.purchasePrice;
-
-        document.getElementById("salePrice").value =
-            product.salePrice;
+        document.getElementById("productId").value = p.id;
+        document.getElementById("productCode").value = p.code;
+        document.getElementById("productName").value = p.name;
+        document.getElementById("productType").value = p.type || "Hammadde";
+        document.getElementById("productCategory").value = p.category || "";
+        document.getElementById("productUnit").value = p.unit || "Adet";
+        document.getElementById("productWarehouse").value = p.warehouse || "Merkez Depo";
+        document.getElementById("productStock").value = p.stock || 0;
+        document.getElementById("productMinStock").value = p.minStock || 0;
+        document.getElementById("purchasePrice").value = p.purchasePrice || 0;
+        document.getElementById("salePrice").value = p.salePrice || 0;
 
     }else{
 
-        document.getElementById("modalTitle").textContent =
-            "Yeni Ürün";
+        document.getElementById(
+            "productModalTitle"
+        ).textContent = "Yeni Ürün";
 
-        document.getElementById("editId").value = "";
         document.getElementById("productCode").value = "";
         document.getElementById("productName").value = "";
+        document.getElementById("productType").value = "Hammadde";
         document.getElementById("productCategory").value = "";
         document.getElementById("productUnit").value = "Adet";
+        document.getElementById("productWarehouse").value = "Merkez Depo";
         document.getElementById("productStock").value = 0;
         document.getElementById("productMinStock").value = 0;
         document.getElementById("purchasePrice").value = 0;
         document.getElementById("salePrice").value = 0;
     }
-}
-
-function closeProductModal(){
-    document.getElementById("productModal").classList.remove("show");
 }
 
 function saveProduct(){
@@ -1476,14 +2345,19 @@ function saveProduct(){
         return;
     }
 
-    const product = {
-        id:
-            document.getElementById("editId").value ||
-            Date.now().toString(),
+    const editId =
+        document.getElementById("productId").value;
+
+    const p = {
+
+        id:editId || id(),
 
         code,
 
         name,
+
+        type:
+            document.getElementById("productType").value,
 
         category:
             document.getElementById("productCategory").value.trim() ||
@@ -1492,42 +2366,97 @@ function saveProduct(){
         unit:
             document.getElementById("productUnit").value,
 
+        warehouse:
+            document.getElementById("productWarehouse").value,
+
         stock:
-            Number(document.getElementById("productStock").value) || 0,
+            num(document.getElementById("productStock").value),
 
         minStock:
-            Number(document.getElementById("productMinStock").value) || 0,
+            num(document.getElementById("productMinStock").value),
 
         purchasePrice:
-            Number(document.getElementById("purchasePrice").value) || 0,
+            num(document.getElementById("purchasePrice").value),
 
         salePrice:
-            Number(document.getElementById("salePrice").value) || 0,
+            num(document.getElementById("salePrice").value),
 
-        updatedAt:
-            new Date().toISOString()
+        updatedAt:Date.now()
+
     };
 
-    const oldIndex =
-        products.findIndex(p => p.id === product.id);
+    const index =
+        products.findIndex(x=>x.id===p.id);
 
-    if(oldIndex >= 0){
-        products[oldIndex] = product;
+    if(index>=0){
+        products[index]=p;
+        addActivity("Ürün güncellendi",p.name);
     }else{
-        products.unshift(product);
+        products.unshift(p);
+        addActivity("Yeni ürün oluşturuldu",p.name);
     }
 
-    saveData();
+    saveAll();
 
-    closeProductModal();
+    closeModal("productModal");
 
-    refreshAll();
+    refresh();
+}
 
-    alert("Ürün başarıyla kaydedildi.");
+function deleteProduct(productId){
+
+    const p =
+        products.find(x=>x.id===productId);
+
+    if(!p) return;
+
+    if(!confirm(
+        `"${p.name}" ürününü silmek istiyor musunuz?`
+    )){
+        return;
+    }
+
+    products =
+        products.filter(x=>x.id!==productId);
+
+    boms =
+        boms.filter(x=>x.parentId!==productId);
+
+    saveAll();
+
+    addActivity("Ürün silindi",p.name);
+
+    refresh();
 }
 
 
-/* STOK LİSTESİ */
+/* =========================
+   STOK
+========================= */
+
+function changeStock(productId,amount){
+
+    const p =
+        products.find(x=>x.id===productId);
+
+    if(!p) return;
+
+    p.stock =
+        Math.max(0,num(p.stock)+num(amount));
+
+    p.updatedAt=Date.now();
+
+    saveAll();
+
+    addActivity(
+        amount>0
+        ?"Stok artırıldı"
+        :"Stok azaltıldı",
+        `${p.name} (${amount>0?"+":""}${amount})`
+    );
+
+    refresh();
+}
 
 function renderProducts(){
 
@@ -1540,364 +2469,37 @@ function renderProducts(){
         (document.getElementById("stockSearch")?.value || "")
         .toLowerCase();
 
+    const type =
+        document.getElementById("stockTypeFilter")?.value || "";
+
     const category =
         document.getElementById("categoryFilter")?.value || "";
 
-    const filtered =
-        products.filter(p => {
+    const list =
+        products.filter(p=>{
 
-            const matchesSearch =
+            const s =
                 p.code.toLowerCase().includes(search) ||
                 p.name.toLowerCase().includes(search);
 
-            const matchesCategory =
-                !category || p.category === category;
+            const t =
+                !type || (p.type || "Hammadde")===type;
 
-            return matchesSearch && matchesCategory;
+            const c =
+                !category || p.category===category;
+
+            return s && t && c;
         });
 
-    if(filtered.length === 0){
+    updateCategoryFilter();
 
-        tbody.innerHTML = `
+    if(!list.length){
+
+        tbody.innerHTML=`
             <tr>
-                <td colspan="10">
+                <td colspan="11">
                     <div class="empty">
-                        Henüz ürün bulunmuyor.
-                    </div>
-                </td>
-            </tr>
-        `;
-
-    }else{
-
-        tbody.innerHTML =
-            filtered.map(p => {
-
-                const critical =
-                    Number(p.stock) <= Number(p.minStock);
-
-                return `
-                    <tr>
-
-                        <td>
-                            <strong>${escapeHtml(p.code)}</strong>
-                        </td>
-
-                        <td>
-                            ${escapeHtml(p.name)}
-                        </td>
-
-                        <td>
-                            ${escapeHtml(p.category)}
-                        </td>
-
-                        <td>
-                            ${escapeHtml(p.unit)}
-                        </td>
-
-                        <td>
-                            <strong>${p.stock}</strong>
-                        </td>
-
-                        <td>
-                            ${p.minStock}
-                        </td>
-
-                        <td>
-                            ${money(p.purchasePrice)}
-                        </td>
-
-                        <td>
-                            ${money(p.salePrice)}
-                        </td>
-
-                        <td>
-                            ${
-                                critical
-                                ?
-                                '<span class="badge red">KRİTİK</span>'
-                                :
-                                '<span class="badge green">NORMAL</span>'
-                            }
-                        </td>
-
-                        <td>
-
-                            <button class="btn"
-                                onclick="changeStock('${p.id}',1)"
-                                title="Stok artır">
-                                +
-                            </button>
-
-                            <button class="btn"
-                                onclick="changeStock('${p.id}',-1)"
-                                title="Stok azalt">
-                                −
-                            </button>
-
-                            <button class="btn"
-                                onclick="openProductModal('${p.id}')">
-                                Düzenle
-                            </button>
-
-                            <button class="btn danger"
-                                onclick="deleteProduct('${p.id}')">
-                                Sil
-                            </button>
-
-                        </td>
-
-                    </tr>
-                `;
-            }).join("");
-    }
-
-    updateCategories();
-}
-
-function updateCategories(){
-
-    const select =
-        document.getElementById("categoryFilter");
-
-    if(!select) return;
-
-    const current =
-        select.value;
-
-    const categories =
-        [...new Set(products.map(p=>p.category))]
-        .filter(Boolean)
-        .sort();
-
-    select.innerHTML =
-        `<option value="">Tüm Kategoriler</option>` +
-        categories.map(c=>
-            `<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`
-        ).join("");
-
-    select.value = current;
-}
-
-
-/* STOK DEĞİŞTİR */
-
-function changeStock(id, amount){
-
-    const product =
-        products.find(p=>p.id === id);
-
-    if(!product) return;
-
-    product.stock =
-        Math.max(0, Number(product.stock) + Number(amount));
-
-    product.updatedAt =
-        new Date().toISOString();
-
-    saveData();
-    refreshAll();
-}
-
-
-/* ÜRÜN SİL */
-
-function deleteProduct(id){
-
-    const product =
-        products.find(p=>p.id === id);
-
-    if(!product) return;
-
-    const ok =
-        confirm(
-            `"${product.name}" ürününü silmek istediğinize emin misiniz?`
-        );
-
-    if(!ok) return;
-
-    products =
-        products.filter(p=>p.id !== id);
-
-    saveData();
-
-    refreshAll();
-}
-
-
-/* DASHBOARD */
-
-function updateDashboard(){
-
-    const totalProducts =
-        products.length;
-
-    const totalStock =
-        products.reduce(
-            (sum,p)=>sum + Number(p.stock || 0),
-            0
-        );
-
-    const stockValue =
-        products.reduce(
-            (sum,p)=>
-                sum +
-                Number(p.stock || 0) *
-                Number(p.purchasePrice || 0),
-            0
-        );
-
-    const critical =
-        products.filter(
-            p=>Number(p.stock) <= Number(p.minStock)
-        );
-
-    document.getElementById("dashProducts").textContent =
-        totalProducts;
-
-    document.getElementById("dashStock").textContent =
-        totalStock;
-
-    document.getElementById("dashValue").textContent =
-        money(stockValue);
-
-    document.getElementById("dashCritical").textContent =
-        critical.length;
-
-    document.getElementById("reportProducts").textContent =
-        totalProducts;
-
-    document.getElementById("reportStock").textContent =
-        totalStock;
-
-    document.getElementById("reportValue").textContent =
-        money(stockValue);
-
-    document.getElementById("reportCritical").textContent =
-        critical.length;
-
-
-    const criticalList =
-        document.getElementById("criticalList");
-
-    if(critical.length === 0){
-
-        criticalList.innerHTML =
-            `
-                <div class="empty">
-                    ✅ Kritik stok bulunmuyor.
-                </div>
-            `;
-
-    }else{
-
-        criticalList.innerHTML =
-            critical.slice(0,5).map(p=>
-                `
-                    <div class="alert-row">
-                        <div>
-                            <strong>${escapeHtml(p.name)}</strong>
-                            <span>${escapeHtml(p.code)}</span>
-                        </div>
-
-                        <span class="badge red">
-                            ${p.stock} / ${p.minStock}
-                        </span>
-                    </div>
-                `
-            ).join("");
-    }
-
-
-    const recent =
-        document.getElementById("recentProducts");
-
-    if(products.length === 0){
-
-        recent.innerHTML =
-            `<div class="empty">
-                Henüz ürün eklenmemiş.
-            </div>`;
-
-    }else{
-
-        recent.innerHTML = `
-            <div class="table-wrap">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Kod</th>
-                            <th>Ürün</th>
-                            <th>Kategori</th>
-                            <th>Stok</th>
-                            <th>Durum</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-
-                        ${
-                            products.slice(0,6).map(p=>`
-
-                                <tr>
-
-                                    <td>
-                                        ${escapeHtml(p.code)}
-                                    </td>
-
-                                    <td>
-                                        ${escapeHtml(p.name)}
-                                    </td>
-
-                                    <td>
-                                        ${escapeHtml(p.category)}
-                                    </td>
-
-                                    <td>
-                                        ${p.stock} ${escapeHtml(p.unit)}
-                                    </td>
-
-                                    <td>
-
-                                        ${
-                                            Number(p.stock) <= Number(p.minStock)
-                                            ?
-                                            '<span class="badge red">KRİTİK</span>'
-                                            :
-                                            '<span class="badge green">NORMAL</span>'
-                                        }
-
-                                    </td>
-
-                                </tr>
-
-                            `).join("")
-                        }
-
-                    </tbody>
-                </table>
-            </div>
-        `;
-    }
-}
-
-
-/* RAPOR */
-
-function renderReports(){
-
-    const tbody =
-        document.getElementById("reportTable");
-
-    if(!tbody) return;
-
-    if(products.length === 0){
-
-        tbody.innerHTML = `
-            <tr>
-                <td colspan="5">
-                    <div class="empty">
-                        Rapor için ürün verisi bulunmuyor.
+                        Ürün bulunamadı.
                     </div>
                 </td>
             </tr>
@@ -1907,86 +2509,2322 @@ function renderReports(){
     }
 
     tbody.innerHTML =
-        products.map(p=>`
+        list.map(p=>{
 
-            <tr>
+            const critical =
+                num(p.stock)<=num(p.minStock);
 
-                <td>${escapeHtml(p.code)}</td>
+            return `
+                <tr>
 
-                <td>${escapeHtml(p.name)}</td>
+                    <td><strong>${esc(p.code)}</strong></td>
 
-                <td>${p.stock} ${escapeHtml(p.unit)}</td>
+                    <td>${esc(p.name)}</td>
 
-                <td>${p.minStock}</td>
+                    <td>${esc(p.type || "Hammadde")}</td>
 
-                <td>
-                    ${money(
-                        Number(p.stock) *
-                        Number(p.purchasePrice)
-                    )}
-                </td>
+                    <td>${esc(p.category)}</td>
 
-            </tr>
+                    <td>${esc(p.unit)}</td>
 
-        `).join("");
+                    <td><strong>${num(p.stock)}</strong></td>
+
+                    <td>${num(p.minStock)}</td>
+
+                    <td>${money(p.purchasePrice)}</td>
+
+                    <td>${money(p.salePrice)}</td>
+
+                    <td>
+                        ${
+                            critical
+                            ? '<span class="badge red">KRİTİK</span>'
+                            : '<span class="badge green">NORMAL</span>'
+                        }
+                    </td>
+
+                    <td>
+
+                        <button class="btn small"
+                            onclick="changeStock('${p.id}',1)">+</button>
+
+                        <button class="btn small"
+                            onclick="changeStock('${p.id}',-1)">−</button>
+
+                        <button class="btn small"
+                            onclick="openProductModal('${p.id}')">
+                            Düzenle
+                        </button>
+
+                        <button class="btn red small"
+                            onclick="deleteProduct('${p.id}')">
+                            Sil
+                        </button>
+
+                    </td>
+
+                </tr>
+            `;
+        }).join("");
 }
 
+function updateCategoryFilter(){
 
-/* ARAMA */
+    const select =
+        document.getElementById("categoryFilter");
 
-function globalSearch(value){
+    if(!select) return;
 
-    if(!value.trim()) return;
+    const current=select.value;
 
-    const q = value.toLowerCase();
+    const categories=[
+        ...new Set(
+            products
+            .map(p=>p.category)
+            .filter(Boolean)
+        )
+    ].sort();
 
-    const product =
-        products.find(
-            p =>
-                p.code.toLowerCase().includes(q) ||
-                p.name.toLowerCase().includes(q)
+    select.innerHTML =
+        '<option value="">Tüm Kategoriler</option>' +
+        categories
+        .map(c=>`
+            <option value="${esc(c)}">
+                ${esc(c)}
+            </option>
+        `)
+        .join("");
+
+    select.value=current;
+}
+
+function stockMovementModal(){
+
+    const name =
+        prompt(
+            "Stok hareketi yapmak için ürün adını yazın:"
         );
 
-    if(product){
+    if(!name) return;
 
-        showPage("stock",null);
+    const p =
+        products.find(
+            x=>x.name.toLowerCase()===name.toLowerCase() ||
+               x.code.toLowerCase()===name.toLowerCase()
+        );
 
-        const search =
-            document.getElementById("stockSearch");
+    if(!p){
 
-        if(search){
-            search.value = value;
-            renderProducts();
-        }
+        alert("Ürün bulunamadı.");
+        return;
     }
+
+    const amount =
+        Number(
+            prompt(
+                "Pozitif giriş, negatif çıkış olacak şekilde miktarı girin:"
+            )
+        );
+
+    if(!Number.isFinite(amount) || amount===0){
+
+        alert("Geçerli bir miktar girin.");
+        return;
+    }
+
+    changeStock(p.id,amount);
 }
 
 
-/* CSV */
+/* =========================
+   ÜRÜN AĞACI
+========================= */
 
-function exportProducts(){
+function initializeBOMPage(){
 
-    if(products.length === 0){
+    const select =
+        document.getElementById("bomProductSelect");
 
-        alert("Dışa aktarılacak ürün yok.");
+    select.innerHTML =
+        '<option value="">Mamul seçin</option>' +
+
+        products
+        .filter(p=>p.type==="Mamul")
+        .map(p=>`
+            <option value="${p.id}">
+                ${esc(p.code)} - ${esc(p.name)}
+            </option>
+        `)
+        .join("");
+
+    renderBOM();
+}
+
+function renderBOM(){
+
+    const productId =
+        document.getElementById("bomProductSelect")?.value;
+
+    const box =
+        document.getElementById("bomTable");
+
+    const summary =
+        document.getElementById("bomSummary");
+
+    if(!box) return;
+
+    if(!productId){
+
+        box.innerHTML =
+            '<div class="empty">Bir mamul seçin.</div>';
+
+        if(summary) summary.textContent="";
 
         return;
     }
 
-    let csv =
-        "Kod;Ürün;Kategori;Birim;Stok;Min Stok;Alış;Satış\n";
+    const bom =
+        boms.find(x=>x.parentId===productId);
 
-    products.forEach(p=>{
+    if(!bom || !bom.items.length){
 
-        csv +=
-            `${p.code};${p.name};${p.category};${p.unit};${p.stock};${p.minStock};${p.purchasePrice};${p.salePrice}\n`;
+        box.innerHTML =
+            '<div class="empty">Bu ürün için reçete tanımlanmamış.</div>';
+
+        if(summary) summary.textContent="";
+
+        return;
+    }
+
+    summary.textContent =
+        `${bom.items.length} malzeme`;
+
+    box.innerHTML=`
+        <div class="table-wrap">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Kod</th>
+                        <th>Hammadde</th>
+                        <th>Miktar</th>
+                        <th>Birim</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    ${bom.items.map(item=>{
+
+                        const p =
+                            products.find(x=>x.id===item.productId);
+
+                        if(!p) return "";
+
+                        return `
+                            <tr>
+                                <td>${esc(p.code)}</td>
+                                <td>${esc(p.name)}</td>
+                                <td>${item.quantity}</td>
+                                <td>${esc(p.unit)}</td>
+                            </tr>
+                        `;
+
+                    }).join("")}
+
+                </tbody>
+
+            </table>
+
+        </div>
+    `;
+}
+
+function openBOMModal(){
+
+    const parent =
+        document.getElementById("bomParent");
+
+    parent.innerHTML =
+        products
+        .filter(p=>p.type==="Mamul")
+        .map(p=>`
+            <option value="${p.id}">
+                ${esc(p.code)} - ${esc(p.name)}
+            </option>
+        `)
+        .join("");
+
+    document.getElementById("bomRows").innerHTML="";
+
+    addBOMRow();
+
+    document
+        .getElementById("bomModal")
+        .classList.add("show");
+}
+
+function addBOMRow(){
+
+    const container =
+        document.getElementById("bomRows");
+
+    const row =
+        document.createElement("div");
+
+    row.className="bom-row";
+
+    row.innerHTML=`
+
+        <select class="form-control bom-product">
+
+            <option value="">Hammadde seçin</option>
+
+            ${
+                products
+                .filter(p=>p.type==="Hammadde" || p.type==="Yarı Mamul")
+                .map(p=>`
+                    <option value="${p.id}">
+                        ${esc(p.code)} - ${esc(p.name)}
+                    </option>
+                `)
+                .join("")
+            }
+
+        </select>
+
+        <input
+            class="form-control bom-qty"
+            type="number"
+            min="0"
+            step="0.001"
+            value="1"
+            placeholder="Miktar"
+        >
+
+        <select class="form-control">
+            <option>Sabit</option>
+        </select>
+
+        <button
+            class="btn red"
+            onclick="this.parentElement.remove()">
+            ×
+        </button>
+
+    `;
+
+    container.appendChild(row);
+}
+
+function saveBOM(){
+
+    const parentId =
+        document.getElementById("bomParent").value;
+
+    if(!parentId){
+
+        alert("Mamul seçin.");
+        return;
+    }
+
+    const rows =
+        [...document.querySelectorAll("#bomRows .bom-row")];
+
+    const items =
+        rows.map(row=>({
+
+            productId:
+                row.querySelector(".bom-product").value,
+
+            quantity:
+                num(
+                    row.querySelector(".bom-qty").value
+                )
+
+        })).filter(
+            x=>x.productId && x.quantity>0
+        );
+
+    if(!items.length){
+
+        alert("En az bir hammadde ekleyin.");
+        return;
+    }
+
+    const existing =
+        boms.find(x=>x.parentId===parentId);
+
+    const data={
+        id:existing?.id || id(),
+        parentId,
+        items,
+        updatedAt:Date.now()
+    };
+
+    if(existing){
+
+        const index =
+            boms.findIndex(x=>x.id===existing.id);
+
+        boms[index]=data;
+
+    }else{
+
+        boms.push(data);
+
+    }
+
+    saveAll();
+
+    addActivity(
+        "Ürün ağacı güncellendi",
+        productName(parentId)
+    );
+
+    closeModal("bomModal");
+
+    initializeBOMPage();
+
+    alert("Ürün ağacı kaydedildi.");
+}
+
+
+/* =========================
+   ÜRETİM
+========================= */
+
+function productName(productId){
+
+    return products.find(
+        p=>p.id===productId
+    )?.name || "Bilinmeyen ürün";
+}
+
+function getBom(productId){
+
+    return boms.find(
+        x=>x.parentId===productId
+    );
+}
+
+function calculateProductionNeeds(productId,quantity){
+
+    const bom =
+        getBom(productId);
+
+    if(!bom) return [];
+
+    return bom.items.map(item=>{
+
+        const p =
+            products.find(
+                x=>x.id===item.productId
+            );
+
+        const required =
+            num(item.quantity)*num(quantity);
+
+        return {
+
+            productId:item.productId,
+
+            name:p?.name || "Bilinmiyor",
+
+            code:p?.code || "",
+
+            required,
+
+            available:num(p?.stock),
+
+            missing:
+                Math.max(
+                    0,
+                    required-num(p?.stock)
+                ),
+
+            unit:p?.unit || ""
+
+        };
+
+    });
+}
+
+function openProductionModal(){
+
+    const select =
+        document.getElementById("productionProduct");
+
+    select.innerHTML =
+        '<option value="">Mamul seçin</option>' +
+
+        products
+        .filter(p=>p.type==="Mamul")
+        .map(p=>`
+            <option value="${p.id}">
+                ${esc(p.code)} - ${esc(p.name)}
+            </option>
+        `)
+        .join("");
+
+    document.getElementById(
+        "productionQuantity"
+    ).value=1;
+
+    document.getElementById(
+        "productionNeedPreview"
+    ).innerHTML="";
+
+    document
+        .getElementById("productionModal")
+        .classList.add("show");
+}
+
+document.addEventListener("input",function(e){
+
+    if(
+        e.target.id==="productionQuantity" ||
+        e.target.id==="productionProduct"
+    ){
+        previewProduction();
+    }
+
+});
+
+document.addEventListener("change",function(e){
+
+    if(e.target.id==="productionProduct"){
+        previewProduction();
+    }
+
+});
+
+function previewProduction(){
+
+    const productId =
+        document.getElementById("productionProduct")?.value;
+
+    const quantity =
+        num(
+            document.getElementById("productionQuantity")?.value
+        );
+
+    const box =
+        document.getElementById(
+            "productionNeedPreview"
+        );
+
+    if(!box || !productId || !quantity){
+
+        if(box) box.innerHTML="";
+
+        return;
+    }
+
+    const bom =
+        getBom(productId);
+
+    if(!bom){
+
+        box.innerHTML=`
+            <div class="alert warn">
+                Bu mamul için ürün ağacı bulunmuyor.
+            </div>
+        `;
+
+        return;
+    }
+
+    const needs =
+        calculateProductionNeeds(
+            productId,
+            quantity
+        );
+
+    box.innerHTML=`
+
+        <div class="card">
+
+            <div class="card-head">
+                <h3>Malzeme İhtiyacı</h3>
+            </div>
+
+            <div class="table-wrap">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Hammadde</th>
+                            <th>Gerekli</th>
+                            <th>Mevcut</th>
+                            <th>Eksik</th>
+                            <th>Durum</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        ${needs.map(n=>`
+
+                            <tr>
+
+                                <td>${esc(n.name)}</td>
+
+                                <td>${n.required} ${esc(n.unit)}</td>
+
+                                <td>${n.available} ${esc(n.unit)}</td>
+
+                                <td>${n.missing} ${esc(n.unit)}</td>
+
+                                <td>
+                                    ${
+                                        n.missing>0
+                                        ?
+                                        '<span class="badge red">YETERSİZ</span>'
+                                        :
+                                        '<span class="badge green">YETERLİ</span>'
+                                    }
+                                </td>
+
+                            </tr>
+
+                        `).join("")}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+    `;
+}
+
+function createProductionOrder(){
+
+    const productId =
+        document.getElementById(
+            "productionProduct"
+        ).value;
+
+    const quantity =
+        num(
+            document.getElementById(
+                "productionQuantity"
+            ).value
+        );
+
+    if(!productId || quantity<=0){
+
+        alert(
+            "Mamul ve üretim miktarı girin."
+        );
+
+        return;
+    }
+
+    const bom =
+        getBom(productId);
+
+    if(!bom){
+
+        alert(
+            "Bu ürün için önce ürün ağacı oluşturmalısınız."
+        );
+
+        return;
+    }
+
+    const needs =
+        calculateProductionNeeds(
+            productId,
+            quantity
+        );
+
+    const missing =
+        needs.filter(x=>x.missing>0);
+
+    const order={
+
+        id:id(),
+
+        number:
+            "UE-" +
+            new Date().getFullYear() +
+            "-" +
+            String(productionOrders.length+1)
+            .padStart(4,"0"),
+
+        productId,
+
+        quantity,
+
+        date:today(),
+
+        status:"Planlandı",
+
+        needs,
+
+        createdAt:Date.now()
+
+    };
+
+    productionOrders.unshift(order);
+
+    saveAll();
+
+    addActivity(
+        "Üretim emri oluşturuldu",
+        `${order.number} - ${productName(productId)}`
+    );
+
+    closeModal("productionModal");
+
+    renderProduction();
+    updateDashboard();
+
+    if(missing.length){
+
+        alert(
+            "Üretim emri oluşturuldu ancak bazı hammaddeler eksik."
+        );
+
+    }else{
+
+        alert(
+            "Üretim emri oluşturuldu. Tüm hammaddeler yeterli."
+        );
+
+    }
+}
+
+function startProduction(orderId){
+
+    const order =
+        productionOrders.find(
+            x=>x.id===orderId
+        );
+
+    if(!order) return;
+
+    if(order.status!=="Planlandı"){
+
+        alert("Bu üretim emri başlatılamaz.");
+        return;
+    }
+
+    const needs =
+        calculateProductionNeeds(
+            order.productId,
+            order.quantity
+        );
+
+    const missing =
+        needs.filter(x=>x.missing>0);
+
+    if(missing.length){
+
+        alert(
+            "Hammadde yetersiz. Eksik malzemeleri tamamlamadan üretim başlatılamaz."
+        );
+
+        return;
+    }
+
+    order.status="Devam Ediyor";
+    order.startedAt=Date.now();
+    order.needs=needs;
+
+    saveAll();
+
+    addActivity(
+        "Üretim başlatıldı",
+        order.number
+    );
+
+    renderProduction();
+    updateDashboard();
+}
+
+function completeProduction(orderId){
+
+    const order =
+        productionOrders.find(
+            x=>x.id===orderId
+        );
+
+    if(!order) return;
+
+    if(order.status!=="Devam Ediyor"){
+
+        alert(
+            "Üretimin tamamlanması için önce başlatılması gerekir."
+        );
+
+        return;
+    }
+
+    const needs =
+        calculateProductionNeeds(
+            order.productId,
+            order.quantity
+        );
+
+    const missing =
+        needs.filter(x=>x.missing>0);
+
+    if(missing.length){
+
+        alert(
+            "Üretim için gerekli hammaddeler artık yeterli değil."
+        );
+
+        return;
+    }
+
+    /* HAMMADDELERİ DÜŞ */
+    needs.forEach(n=>{
+
+        const p =
+            products.find(
+                x=>x.id===n.productId
+            );
+
+        if(p){
+
+            p.stock =
+                num(p.stock)-num(n.required);
+
+            p.updatedAt=Date.now();
+        }
 
     });
 
+    /* MAMULÜ STOĞA EKLE */
+    const finished =
+        products.find(
+            x=>x.id===order.productId
+        );
+
+    if(finished){
+
+        finished.stock =
+            num(finished.stock)+num(order.quantity);
+
+        finished.updatedAt=Date.now();
+    }
+
+    order.status="Tamamlandı";
+    order.completedAt=Date.now();
+
+    saveAll();
+
+    addActivity(
+        "Üretim tamamlandı",
+        `${order.number} - ${productName(order.productId)}`
+    );
+
+    renderProduction();
+    renderProducts();
+    updateDashboard();
+
+    alert(
+        "Üretim tamamlandı. Hammaddeler stoktan düşüldü ve mamul stoğa eklendi."
+    );
+}
+
+function cancelProduction(orderId){
+
+    const order =
+        productionOrders.find(
+            x=>x.id===orderId
+        );
+
+    if(!order) return;
+
+    if(!confirm(
+        `${order.number} üretim emrini iptal etmek istiyor musunuz?`
+    )){
+        return;
+    }
+
+    order.status="İptal";
+
+    saveAll();
+
+    addActivity(
+        "Üretim iptal edildi",
+        order.number
+    );
+
+    renderProduction();
+    updateDashboard();
+}
+
+function renderProduction(){
+
+    const tbody =
+        document.getElementById(
+            "productionTable"
+        );
+
+    if(!tbody) return;
+
+    const filter =
+        document.getElementById(
+            "productionFilter"
+        )?.value || "";
+
+    const list =
+        productionOrders.filter(
+            x=>!filter || x.status===filter
+        );
+
+    if(!list.length){
+
+        tbody.innerHTML=`
+            <tr>
+                <td colspan="7">
+                    <div class="empty">
+                        Üretim emri bulunmuyor.
+                    </div>
+                </td>
+            </tr>
+        `;
+
+        return;
+    }
+
+    tbody.innerHTML =
+        list.map(o=>{
+
+            const needs =
+                calculateProductionNeeds(
+                    o.productId,
+                    o.quantity
+                );
+
+            const missing =
+                needs.filter(
+                    x=>x.missing>0
+                ).length;
+
+            let badge="blue";
+
+            if(o.status==="Devam Ediyor")
+                badge="yellow";
+
+            if(o.status==="Tamamlandı")
+                badge="green";
+
+            if(o.status==="İptal")
+                badge="red";
+
+            return `
+                <tr>
+
+                    <td>
+                        <strong>${esc(o.number)}</strong>
+                    </td>
+
+                    <td>
+                        ${esc(productName(o.productId))}
+                    </td>
+
+                    <td>
+                        ${o.quantity}
+                    </td>
+
+                    <td>
+                        ${o.date}
+                    </td>
+
+                    <td>
+                        <span class="badge ${badge}">
+                            ${esc(o.status)}
+                        </span>
+                    </td>
+
+                    <td>
+                        ${
+                            missing
+                            ?
+                            `<span class="badge red">
+                                ${missing} eksik
+                            </span>`
+                            :
+                            `<span class="badge green">
+                                Yeterli
+                            </span>`
+                        }
+                    </td>
+
+                    <td>
+
+                        ${
+                            o.status==="Planlandı"
+                            ?
+                            `<button
+                                class="btn small primary"
+                                onclick="startProduction('${o.id}')">
+                                Başlat
+                            </button>`
+                            :
+                            ""
+                        }
+
+                        ${
+                            o.status==="Devam Ediyor"
+                            ?
+                            `<button
+                                class="btn small green"
+                                onclick="completeProduction('${o.id}')">
+                                Tamamla
+                            </button>`
+                            :
+                            ""
+                        }
+
+                        ${
+                            o.status!=="Tamamlandı" &&
+                            o.status!=="İptal"
+                            ?
+                            `<button
+                                class="btn small red"
+                                onclick="cancelProduction('${o.id}')">
+                                İptal
+                            </button>`
+                            :
+                            ""
+                        }
+
+                    </td>
+
+                </tr>
+            `;
+
+        }).join("");
+}
+
+
+/* =========================
+   İŞ İSTASYONLARI
+========================= */
+
+function addWorkCenter(){
+
+    const name =
+        prompt(
+            "İş istasyonu / makine adı:"
+        );
+
+    if(!name) return;
+
+    workcenters.push({
+        id:id(),
+        name,
+        createdAt:Date.now()
+    });
+
+    saveAll();
+
+    renderWorkcenters();
+}
+
+function renderWorkcenters(){
+
+    const box =
+        document.getElementById(
+            "workcenterList"
+        );
+
+    if(!box) return;
+
+    if(!workcenters.length){
+
+        box.innerHTML =
+            `<div class="empty">
+                İş istasyonu bulunmuyor.
+            </div>`;
+
+        return;
+    }
+
+    box.innerHTML=`
+        <div class="table-wrap">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>İş İstasyonu</th>
+                        <th>Durum</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    ${workcenters.map(
+                        (w,i)=>`
+                            <tr>
+                                <td>${i+1}</td>
+                                <td>
+                                    <strong>${esc(w.name)}</strong>
+                                </td>
+                                <td>
+                                    <span class="badge green">
+                                        Aktif
+                                    </span>
+                                </td>
+                            </tr>
+                        `
+                    ).join("")}
+
+                </tbody>
+
+            </table>
+
+        </div>
+    `;
+}
+
+function renderProductionReport(){
+
+    const total =
+        productionOrders.length;
+
+    const planned =
+        productionOrders.filter(
+            x=>x.status==="Planlandı"
+        ).length;
+
+    const running =
+        productionOrders.filter(
+            x=>x.status==="Devam Ediyor"
+        ).length;
+
+    const completed =
+        productionOrders.filter(
+            x=>x.status==="Tamamlandı"
+        ).length;
+
+    const quantity =
+        productionOrders.reduce(
+            (s,x)=>s+num(x.quantity),
+            0
+        );
+
+    document.getElementById("prTotal").textContent=total;
+    document.getElementById("prPlanned").textContent=planned;
+    document.getElementById("prRunning").textContent=running;
+    document.getElementById("prCompleted").textContent=completed;
+    document.getElementById("prQuantity").textContent=quantity;
+}
+
+
+/* =========================
+   CARİ
+========================= */
+
+function openPartyModal(type){
+
+    document.getElementById("partyType").value=type;
+
+    document.getElementById("partyTitle").textContent =
+        type==="customer"
+        ?"Yeni Müşteri"
+        :"Yeni Tedarikçi";
+
+    document.getElementById("partyCode").value="";
+    document.getElementById("partyName").value="";
+    document.getElementById("partyPhone").value="";
+    document.getElementById("partyEmail").value="";
+    document.getElementById("partyAddress").value="";
+
+    document
+        .getElementById("partyModal")
+        .classList.add("show");
+}
+
+function saveParty(){
+
+    const type =
+        document.getElementById("partyType").value;
+
+    const code =
+        document.getElementById("partyCode").value.trim();
+
+    const name =
+        document.getElementById("partyName").value.trim();
+
+    if(!name){
+
+        alert("Ünvan / ad zorunludur.");
+        return;
+    }
+
+    const item={
+
+        id:id(),
+
+        code:
+            code ||
+            `${type==="customer"?"M":"T"}-${Date.now()}`,
+
+        name,
+
+        phone:
+            document.getElementById("partyPhone").value,
+
+        email:
+            document.getElementById("partyEmail").value,
+
+        address:
+            document.getElementById("partyAddress").value,
+
+        balance:0,
+
+        createdAt:Date.now()
+
+    };
+
+    if(type==="customer"){
+        customers.unshift(item);
+        addActivity(
+            "Yeni müşteri oluşturuldu",
+            item.name
+        );
+    }else{
+        suppliers.unshift(item);
+        addActivity(
+            "Yeni tedarikçi oluşturuldu",
+            item.name
+        );
+    }
+
+    saveAll();
+
+    closeModal("partyModal");
+
+    renderCustomersSuppliers();
+    updateDashboard();
+}
+
+function renderCustomersSuppliers(){
+
+    const customerList =
+        document.getElementById(
+            "customerList"
+        );
+
+    if(customerList){
+
+        customerList.innerHTML =
+            customers.length
+            ?
+            customers.map(c=>`
+                <div class="stat-row" style="padding:13px 18px">
+
+                    <span>
+                        <strong>
+                            ${esc(c.code)}
+                        </strong>
+                        -
+                        ${esc(c.name)}
+                    </span>
+
+                    <strong>
+                        ${money(c.balance)}
+                    </strong>
+
+                </div>
+            `).join("")
+            :
+            '<div class="empty">Müşteri bulunmuyor.</div>';
+    }
+
+    const supplierList =
+        document.getElementById(
+            "supplierList"
+        );
+
+    if(supplierList){
+
+        supplierList.innerHTML =
+            suppliers.length
+            ?
+            suppliers.map(s=>`
+                <div class="stat-row" style="padding:13px 18px">
+
+                    <span>
+                        <strong>
+                            ${esc(s.code)}
+                        </strong>
+                        -
+                        ${esc(s.name)}
+                    </span>
+
+                    <strong>
+                        ${money(s.balance)}
+                    </strong>
+
+                </div>
+            `).join("")
+            :
+            '<div class="empty">Tedarikçi bulunmuyor.</div>';
+    }
+}
+
+function renderCurrent(){
+
+    document.getElementById(
+        "currentCustomers"
+    ).textContent=customers.length;
+
+    document.getElementById(
+        "currentSuppliers"
+    ).textContent=suppliers.length;
+
+    const debit =
+        currentMovements
+        .filter(x=>x.type==="debit")
+        .reduce(
+            (s,x)=>s+num(x.amount),
+            0
+        );
+
+    const credit =
+        currentMovements
+        .filter(x=>x.type==="credit")
+        .reduce(
+            (s,x)=>s+num(x.amount),
+            0
+        );
+
+    document.getElementById(
+        "currentDebit"
+    ).textContent=money(debit);
+
+    document.getElementById(
+        "currentCredit"
+    ).textContent=money(credit);
+
+    document.getElementById(
+        "currentNet"
+    ).textContent=money(debit-credit);
+
+
+    const box =
+        document.getElementById(
+            "currentMovementList"
+        );
+
+    if(!currentMovements.length){
+
+        box.innerHTML =
+            '<div class="empty">Cari hareket bulunmuyor.</div>';
+
+        return;
+    }
+
+    box.innerHTML=`
+        <div class="table-wrap">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Tarih</th>
+                        <th>Cari</th>
+                        <th>Açıklama</th>
+                        <th>Tip</th>
+                        <th>Tutar</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    ${
+                        currentMovements.map(x=>`
+                            <tr>
+                                <td>${esc(x.date)}</td>
+                                <td>${esc(x.party)}</td>
+                                <td>${esc(x.note)}</td>
+                                <td>
+                                    <span class="badge ${
+                                        x.type==="debit"
+                                        ?"red"
+                                        :"green"
+                                    }">
+                                        ${
+                                            x.type==="debit"
+                                            ?"Borç"
+                                            :"Alacak"
+                                        }
+                                    </span>
+                                </td>
+                                <td>${money(x.amount)}</td>
+                            </tr>
+                        `).join("")
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+    `;
+}
+
+function newCurrentMovement(){
+
+    const party =
+        prompt(
+            "Cari adı:"
+        );
+
+    if(!party) return;
+
+    const amount =
+        Number(
+            prompt("Tutar:")
+        );
+
+    if(!amount) return;
+
+    const type =
+        confirm(
+            "Borç işlemi mi?\nTamam = Borç\nİptal = Alacak"
+        )
+        ? "debit"
+        : "credit";
+
+    const note =
+        prompt("Açıklama:") || "";
+
+    currentMovements.unshift({
+
+        id:id(),
+
+        date:today(),
+
+        party,
+
+        amount,
+
+        type,
+
+        note
+
+    });
+
+    saveAll();
+
+    addActivity(
+        "Cari hareket oluşturuldu",
+        party
+    );
+
+    renderCurrent();
+}
+
+
+/* =========================
+   SATIN ALMA
+========================= */
+
+function newPurchaseOrder(){
+
+    const supplier =
+        prompt(
+            "Tedarikçi adı:"
+        );
+
+    if(!supplier) return;
+
+    const amount =
+        Number(
+            prompt(
+                "Sipariş toplamı:"
+            )
+        );
+
+    if(!amount) return;
+
+    purchaseOrders.unshift({
+
+        id:id(),
+
+        number:
+            "SA-" +
+            String(purchaseOrders.length+1)
+            .padStart(5,"0"),
+
+        supplier,
+
+        amount,
+
+        date:today(),
+
+        status:"Bekliyor"
+
+    });
+
+    saveAll();
+
+    addActivity(
+        "Satın alma siparişi oluşturuldu",
+        supplier
+    );
+
+    renderPurchases();
+
+    alert(
+        "Satın alma siparişi oluşturuldu."
+    );
+}
+
+function renderPurchases(){
+
+    const box =
+        document.getElementById(
+            "purchaseList"
+        );
+
+    if(!box) return;
+
+    if(!purchaseOrders.length){
+
+        box.innerHTML =
+            '<div class="empty">Satın alma siparişi yok.</div>';
+
+        return;
+    }
+
+    box.innerHTML=`
+        <div class="table-wrap">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Tedarikçi</th>
+                        <th>Tutar</th>
+                        <th>Tarih</th>
+                        <th>Durum</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    ${purchaseOrders.map(x=>`
+                        <tr>
+                            <td>${esc(x.number)}</td>
+                            <td>${esc(x.supplier)}</td>
+                            <td>${money(x.amount)}</td>
+                            <td>${esc(x.date)}</td>
+                            <td>
+                                <span class="badge yellow">
+                                    ${esc(x.status)}
+                                </span>
+                            </td>
+                        </tr>
+                    `).join("")}
+
+                </tbody>
+
+            </table>
+
+        </div>
+    `;
+}
+
+
+/* =========================
+   SATIŞ
+========================= */
+
+function newSalesOrder(){
+
+    const customer =
+        prompt(
+            "Müşteri adı:"
+        );
+
+    if(!customer) return;
+
+    const amount =
+        Number(
+            prompt(
+                "Sipariş toplamı:"
+            )
+        );
+
+    if(!amount) return;
+
+    salesOrders.unshift({
+
+        id:id(),
+
+        number:
+            "SS-" +
+            String(salesOrders.length+1)
+            .padStart(5,"0"),
+
+        customer,
+
+        amount,
+
+        date:today(),
+
+        status:"Bekliyor"
+
+    });
+
+    saveAll();
+
+    addActivity(
+        "Satış siparişi oluşturuldu",
+        customer
+    );
+
+    renderSales();
+
+    alert(
+        "Satış siparişi oluşturuldu."
+    );
+}
+
+function renderSales(){
+
+    const box =
+        document.getElementById(
+            "salesList"
+        );
+
+    if(!box) return;
+
+    if(!salesOrders.length){
+
+        box.innerHTML =
+            '<div class="empty">Satış siparişi yok.</div>';
+
+        return;
+    }
+
+    box.innerHTML=`
+        <div class="table-wrap">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Müşteri</th>
+                        <th>Tutar</th>
+                        <th>Tarih</th>
+                        <th>Durum</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    ${salesOrders.map(x=>`
+                        <tr>
+                            <td>${esc(x.number)}</td>
+                            <td>${esc(x.customer)}</td>
+                            <td>${money(x.amount)}</td>
+                            <td>${esc(x.date)}</td>
+                            <td>
+                                <span class="badge blue">
+                                    ${esc(x.status)}
+                                </span>
+                            </td>
+                        </tr>
+                    `).join("")}
+
+                </tbody>
+
+            </table>
+
+        </div>
+    `;
+}
+
+
+/* =========================
+   FİNANS
+========================= */
+
+function newFinanceMovement(){
+
+    const type =
+        confirm(
+            "Gelir işlemi mi?\nTamam = Gelir\nİptal = Gider"
+        )
+        ? "income"
+        : "expense";
+
+    const amount =
+        Number(
+            prompt(
+                type==="income"
+                ?"Gelir tutarı:"
+                :"Gider tutarı:"
+            )
+        );
+
+    if(!amount) return;
+
+    const description =
+        prompt(
+            "Açıklama:"
+        ) || "";
+
+    const account =
+        prompt(
+            "Hesap (Kasa/Banka):",
+            "Kasa"
+        ) || "Kasa";
+
+    financeMovements.unshift({
+
+        id:id(),
+
+        date:today(),
+
+        type,
+
+        amount,
+
+        description,
+
+        account
+
+    });
+
+    saveAll();
+
+    addActivity(
+        type==="income"
+        ?"Gelir kaydı"
+        :"Gider kaydı",
+        description
+    );
+
+    renderFinance();
+}
+
+function renderFinance(){
+
+    const income =
+        financeMovements
+        .filter(x=>x.type==="income")
+        .reduce(
+            (s,x)=>s+num(x.amount),
+            0
+        );
+
+    const expense =
+        financeMovements
+        .filter(x=>x.type==="expense")
+        .reduce(
+            (s,x)=>s+num(x.amount),
+            0
+        );
+
+    const cash =
+        financeMovements
+        .filter(x=>x.account.toLowerCase()==="kasa")
+        .reduce(
+            (s,x)=>s+
+                (x.type==="income"
+                ?num(x.amount)
+                :-num(x.amount)),
+            0
+        );
+
+    const bank =
+        financeMovements
+        .filter(x=>x.account.toLowerCase()==="banka")
+        .reduce(
+            (s,x)=>s+
+                (x.type==="income"
+                ?num(x.amount)
+                :-num(x.amount)),
+            0
+        );
+
+    document.getElementById(
+        "financeIncome"
+    ).textContent=money(income);
+
+    document.getElementById(
+        "financeExpense"
+    ).textContent=money(expense);
+
+    document.getElementById(
+        "financeNet"
+    ).textContent=money(income-expense);
+
+    document.getElementById(
+        "cashTotal"
+    ).textContent=money(cash);
+
+    document.getElementById(
+        "bankTotal"
+    ).textContent=money(bank);
+
+
+    const box =
+        document.getElementById(
+            "financeList"
+        );
+
+    if(!financeMovements.length){
+
+        box.innerHTML =
+            '<div class="empty">Finans hareketi bulunmuyor.</div>';
+
+        return;
+    }
+
+    box.innerHTML=`
+        <div class="table-wrap">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Tarih</th>
+                        <th>Açıklama</th>
+                        <th>Hesap</th>
+                        <th>Tip</th>
+                        <th>Tutar</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    ${financeMovements.map(x=>`
+                        <tr>
+                            <td>${esc(x.date)}</td>
+                            <td>${esc(x.description)}</td>
+                            <td>${esc(x.account)}</td>
+                            <td>
+                                <span class="badge ${
+                                    x.type==="income"
+                                    ?"green"
+                                    :"red"
+                                }">
+                                    ${
+                                        x.type==="income"
+                                        ?"Gelir"
+                                        :"Gider"
+                                    }
+                                </span>
+                            </td>
+                            <td>${money(x.amount)}</td>
+                        </tr>
+                    `).join("")}
+
+                </tbody>
+
+            </table>
+
+        </div>
+    `;
+}
+
+
+/* =========================
+   RAPOR
+========================= */
+
+function renderReports(){
+
+    const totalProducts =
+        products.length;
+
+    const totalStock =
+        products.reduce(
+            (s,p)=>s+num(p.stock),
+            0
+        );
+
+    const stockValue =
+        products.reduce(
+            (s,p)=>
+                s+
+                num(p.stock)*
+                num(p.purchasePrice),
+            0
+        );
+
+    const critical =
+        products.filter(
+            p=>num(p.stock)<=num(p.minStock)
+        ).length;
+
+    document.getElementById(
+        "reportProducts"
+    ).textContent=totalProducts;
+
+    document.getElementById(
+        "reportStock"
+    ).textContent=totalStock;
+
+    document.getElementById(
+        "reportValue"
+    ).textContent=money(stockValue);
+
+    document.getElementById(
+        "reportProduction"
+    ).textContent=productionOrders.length;
+
+    document.getElementById(
+        "reportCritical"
+    ).textContent=critical;
+
+
+    const box =
+        document.getElementById(
+            "reportTable"
+        );
+
+    if(!products.length){
+
+        box.innerHTML =
+            '<div class="empty">Ürün verisi bulunmuyor.</div>';
+
+        return;
+    }
+
+    box.innerHTML=`
+        <div class="table-wrap">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Kod</th>
+                        <th>Ürün</th>
+                        <th>Tip</th>
+                        <th>Stok</th>
+                        <th>Maliyet</th>
+                        <th>Değer</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    ${products.map(p=>`
+
+                        <tr>
+
+                            <td>${esc(p.code)}</td>
+
+                            <td>${esc(p.name)}</td>
+
+                            <td>${esc(p.type || "")}</td>
+
+                            <td>${num(p.stock)} ${esc(p.unit)}</td>
+
+                            <td>${money(p.purchasePrice)}</td>
+
+                            <td>
+                                ${money(
+                                    num(p.stock)*
+                                    num(p.purchasePrice)
+                                )}
+                            </td>
+
+                        </tr>
+
+                    `).join("")}
+
+                </tbody>
+
+            </table>
+
+        </div>
+    `;
+}
+
+
+/* =========================
+   DASHBOARD
+========================= */
+
+function updateDashboard(){
+
+    const totalProducts =
+        products.length;
+
+    const totalStock =
+        products.reduce(
+            (s,p)=>s+num(p.stock),
+            0
+        );
+
+    const value =
+        products.reduce(
+            (s,p)=>
+                s+
+                num(p.stock)*
+                num(p.purchasePrice),
+            0
+        );
+
+    const critical =
+        products.filter(
+            p=>num(p.stock)<=num(p.minStock)
+        ).length;
+
+    const openProduction =
+        productionOrders.filter(
+            x=>
+                x.status==="Planlandı" ||
+                x.status==="Devam Ediyor"
+        ).length;
+
+
+    document.getElementById(
+        "kpiProducts"
+    ).textContent=totalProducts;
+
+    document.getElementById(
+        "kpiStock"
+    ).textContent=totalStock;
+
+    document.getElementById(
+        "kpiValue"
+    ).textContent=money(value);
+
+    document.getElementById(
+        "kpiCritical"
+    ).textContent=critical;
+
+    document.getElementById(
+        "kpiProduction"
+    ).textContent=openProduction;
+
+
+    document.getElementById(
+        "rawCount"
+    ).textContent=
+        products.filter(
+            p=>p.type==="Hammadde"
+        ).length;
+
+    document.getElementById(
+        "semiCount"
+    ).textContent=
+        products.filter(
+            p=>p.type==="Yarı Mamul"
+        ).length;
+
+    document.getElementById(
+        "finishedCount"
+    ).textContent=
+        products.filter(
+            p=>p.type==="Mamul"
+        ).length;
+
+
+    document.getElementById(
+        "plannedProduction"
+    ).textContent=
+        productionOrders.filter(
+            x=>x.status==="Planlandı"
+        ).length;
+
+    document.getElementById(
+        "runningProduction"
+    ).textContent=
+        productionOrders.filter(
+            x=>x.status==="Devam Ediyor"
+        ).length;
+
+    document.getElementById(
+        "completedProduction"
+    ).textContent=
+        productionOrders.filter(
+            x=>x.status==="Tamamlandı"
+        ).length;
+
+
+    document.getElementById(
+        "bomCount"
+    ).textContent=boms.length;
+
+    document.getElementById(
+        "customerCount"
+    ).textContent=customers.length;
+
+    document.getElementById(
+        "supplierCount"
+    ).textContent=suppliers.length;
+
+
+    const alertBox =
+        document.getElementById(
+            "dashboardAlerts"
+        );
+
+    const criticalProducts =
+        products.filter(
+            p=>num(p.stock)<=num(p.minStock)
+        );
+
+    if(!criticalProducts.length){
+
+        alertBox.innerHTML=`
+            <div class="alert info">
+                ✅ Kritik stok bulunmuyor.
+            </div>
+        `;
+
+    }else{
+
+        alertBox.innerHTML=
+            criticalProducts
+            .slice(0,7)
+            .map(p=>`
+                <div class="stat-row">
+                    <span>
+                        ${esc(p.name)}
+                    </span>
+                    <strong>
+                        <span class="badge red">
+                            ${p.stock}/${p.minStock}
+                        </span>
+                    </strong>
+                </div>
+            `)
+            .join("");
+    }
+
+
+    renderRecentActivities();
+}
+
+function addActivity(title,detail){
+
+    activities.unshift({
+
+        id:id(),
+
+        date:new Date().toLocaleString("tr-TR"),
+
+        title,
+
+        detail
+
+    });
+
+    activities =
+        activities.slice(0,100);
+
+    saveAll();
+}
+
+function renderRecentActivities(){
+
+    const box =
+        document.getElementById(
+            "recentActivities"
+        );
+
+    if(!activities.length){
+
+        box.innerHTML =
+            '<div class="empty">Henüz işlem bulunmuyor.</div>';
+
+        return;
+    }
+
+    box.innerHTML=`
+        <div class="table-wrap">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Tarih</th>
+                        <th>İşlem</th>
+                        <th>Detay</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    ${activities
+                        .slice(0,10)
+                        .map(a=>`
+                            <tr>
+                                <td>${esc(a.date)}</td>
+                                <td>
+                                    <strong>
+                                        ${esc(a.title)}
+                                    </strong>
+                                </td>
+                                <td>${esc(a.detail)}</td>
+                            </tr>
+                        `)
+                        .join("")
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+    `;
+}
+
+
+/* =========================
+   GLOBAL ARAMA
+========================= */
+
+function globalSearch(value){
+
+    const q =
+        String(value || "")
+        .trim()
+        .toLowerCase();
+
+    if(!q) return;
+
+    const found =
+        products.find(
+            p=>
+                p.code.toLowerCase().includes(q) ||
+                p.name.toLowerCase().includes(q)
+        );
+
+    if(found){
+
+        showPage("stock");
+
+        setTimeout(()=>{
+
+            const search =
+                document.getElementById(
+                    "stockSearch"
+                );
+
+            if(search){
+
+                search.value=value;
+
+                renderProducts();
+
+            }
+
+        },50);
+    }
+}
+
+
+/* =========================
+   BİLDİRİMLER
+========================= */
+
+function showNotifications(){
+
+    const critical =
+        products.filter(
+            p=>num(p.stock)<=num(p.minStock)
+        ).length;
+
+    const open =
+        productionOrders.filter(
+            x=>x.status==="Planlandı" ||
+               x.status==="Devam Ediyor"
+        ).length;
+
+    alert(
+        "ARDA ERP BİLDİRİMLERİ\n\n" +
+        "Kritik stok: " + critical + "\n" +
+        "Açık üretim: " + open + "\n" +
+        "Toplam ürün: " + products.length
+    );
+}
+
+
+/* =========================
+   DİĞER
+========================= */
+
+function newMaintenance(){
+
+    alert(
+        "Bakım modülünün detaylı ekranını sonraki aşamada aktif edeceğiz."
+    );
+}
+
+function newQualityRecord(){
+
+    alert(
+        "Kalite kontrol modülünü sonraki aşamada aktif edeceğiz."
+    );
+}
+
+
+/* =========================
+   YEDEK
+========================= */
+
+function backupData(){
+
+    const backup = {
+
+        version:1,
+
+        date:new Date().toISOString(),
+
+        products,
+
+        boms,
+
+        productionOrders,
+
+        customers,
+
+        suppliers,
+
+        currentMovements,
+
+        financeMovements,
+
+        activities,
+
+        workcenters,
+
+        purchaseOrders,
+
+        salesOrders
+
+    };
+
     const blob =
         new Blob(
-            ["\uFEFF" + csv],
-            {type:"text/csv;charset=utf-8;"}
+            [
+                JSON.stringify(
+                    backup,
+                    null,
+                    2
+                )
+            ],
+            {
+                type:"application/json"
+            }
         );
 
     const url =
@@ -1995,8 +4833,14 @@ function exportProducts(){
     const a =
         document.createElement("a");
 
-    a.href = url;
-    a.download = "arda-erp-stoklar.csv";
+    a.href=url;
+
+    a.download=
+        "arda-erp-yedek-" +
+        new Date()
+        .toISOString()
+        .slice(0,10) +
+        ".json";
 
     document.body.appendChild(a);
 
@@ -2008,52 +4852,175 @@ function exportProducts(){
 }
 
 
-/* TÜMÜNÜ TEMİZLE */
+/* =========================
+   CSV
+========================= */
+
+function exportCSV(){
+
+    if(!products.length){
+
+        alert("Dışa aktarılacak ürün yok.");
+        return;
+    }
+
+    let csv =
+        "Kod;Ürün;Tip;Kategori;Birim;Stok;Min Stok;Alış;Satış;Depo\n";
+
+    products.forEach(p=>{
+
+        csv +=
+            `${p.code};${p.name};${p.type || ""};${p.category};${p.unit};${p.stock};${p.minStock};${p.purchasePrice};${p.salePrice};${p.warehouse || ""}\n`;
+
+    });
+
+    const blob =
+        new Blob(
+            ["\uFEFF"+csv],
+            {
+                type:"text/csv;charset=utf-8;"
+            }
+        );
+
+    const url =
+        URL.createObjectURL(blob);
+
+    const a =
+        document.createElement("a");
+
+    a.href=url;
+
+    a.download=
+        "arda-erp-stoklar.csv";
+
+    document.body.appendChild(a);
+
+    a.click();
+
+    document.body.removeChild(a);
+
+    URL.revokeObjectURL(url);
+}
+
+
+/* =========================
+   AYARLAR
+========================= */
+
+function saveCompanySettings(){
+
+    localStorage.setItem(
+        "ardaERP_company",
+        JSON.stringify({
+
+            name:
+                document.getElementById(
+                    "companyName"
+                ).value,
+
+            tax:
+                document.getElementById(
+                    "taxNo"
+                ).value,
+
+            address:
+                document.getElementById(
+                    "companyAddress"
+                ).value
+
+        })
+    );
+
+    alert(
+        "Firma bilgileri kaydedildi."
+    );
+}
+
+
+/* =========================
+   TÜM VERİLERİ SİL
+========================= */
 
 function clearAllData(){
 
-    const ok =
-        confirm(
-            "Tüm stok ürünleri silinecek. Devam etmek istiyor musunuz?"
-        );
-
-    if(!ok) return;
-
-    products = [];
-
-    saveData();
-
-    refreshAll();
-
-    alert("Stok verileri temizlendi.");
-}
-
-
-/* YENİLE */
-
-function refreshAll(){
-
-    updateDashboard();
-    renderProducts();
-    renderReports();
-}
-
-
-/* MODAL DIŞINA TIKLAMA */
-
-document.getElementById("productModal")
-.addEventListener("click",function(e){
-
-    if(e.target === this){
-        closeProductModal();
+    if(!confirm(
+        "DİKKAT!\n\nArda ERP'deki tüm veriler silinecek.\nDevam etmek istiyor musunuz?"
+    )){
+        return;
     }
 
+    products=[];
+    boms=[];
+    productionOrders=[];
+    customers=[];
+    suppliers=[];
+    currentMovements=[];
+    financeMovements=[];
+    activities=[];
+    workcenters=[];
+    purchaseOrders=[];
+    salesOrders=[];
+
+    saveAll();
+
+    refresh();
+
+    alert(
+        "Tüm Arda ERP verileri temizlendi."
+    );
+}
+
+
+/* =========================
+   YENİLE
+========================= */
+
+function refresh(){
+
+    updateDashboard();
+
+    renderProducts();
+
+    renderProduction();
+
+    renderReports();
+
+    renderCustomersSuppliers();
+
+    renderPurchases();
+
+    renderSales();
+
+    renderCurrent();
+
+    renderFinance();
+
+    renderWorkcenters();
+
+    renderProductionReport();
+
+}
+
+refresh();
+
+
+/* MODAL DIŞI */
+document.querySelectorAll(
+    ".modal-backdrop"
+).forEach(modal=>{
+
+    modal.addEventListener(
+        "click",
+        function(e){
+
+            if(e.target===this){
+                this.classList.remove("show");
+            }
+
+        }
+    );
+
 });
-
-
-/* BAŞLAT */
-
-refreshAll();
 
 </script>
 
