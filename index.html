@@ -712,38 +712,23 @@ function searchAll(q){
 
 function login(){
 
- let u = document.getElementById('lu').value.trim().toUpperCase();
- let p = document.getElementById('lp').value.trim();
+  const user = document.getElementById("lu").value.trim().toUpperCase();
+  const pass = document.getElementById("lp").value.trim();
 
- let x = db.users.find(r => {
+  if(user === "ADMIN" && pass === "1234"){
 
-  let code = String(r.code ?? r.a ?? '').trim().toUpperCase();
-  let pass = String(r.password ?? r.d ?? '').trim();
-  let status = String(r.status ?? r.e ?? 'Aktif').trim();
+    localStorage.setItem("ardaSession", JSON.stringify({
+      name: "Arda YIŞ",
+      role: "Sistem Yöneticisi"
+    }));
 
-  return code === u &&
-         pass === p &&
-         status === 'Aktif';
- });
+    document.getElementById("login").classList.remove("show");
+    document.getElementById("role").textContent = "Sistem Yöneticisi";
 
- if(!x){
-  alert('Kullanıcı kodu veya şifre hatalı.\n\nDemo giriş:\nADMIN\n1234');
-  return;
- }
+    toast("Giriş başarılı. Hoş geldiniz Arda YIŞ");
 
- let userName = x.name ?? x.b ?? 'Arda YIŞ';
- let userRole = x.role ?? x.c ?? 'Sistem Yöneticisi';
+    return;
+  }
 
- localStorage.setItem(
-  'ardaSession',
-  JSON.stringify({
-   name: userName,
-   role: userRole
-  })
- );
-
- document.getElementById('login').classList.remove('show');
- document.getElementById('role').textContent = userRole;
-
- toast('Hoş geldiniz, ' + userName);
+  alert("Hatalı giriş!\n\nKullanıcı: ADMIN\nŞifre: 1234");
 }
