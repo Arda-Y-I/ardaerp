@@ -712,93 +712,38 @@ function searchAll(q){
 
 function login(){
 
- let u=
-  document.getElementById('lu')
-   .value
-   .toUpperCase();
+ let u = document.getElementById('lu').value.trim().toUpperCase();
+ let p = document.getElementById('lp').value.trim();
 
- let p=
-  document.getElementById('lp')
-   .value;
+ let x = db.users.find(r => {
 
- let x=db.users.find(r=>
-  String(r.a).toUpperCase()===u &&
-  String(r.d)===p &&
-  r.e==='Aktif'
- );
+  let code = String(r.code ?? r.a ?? '').trim().toUpperCase();
+  let pass = String(r.password ?? r.d ?? '').trim();
+  let status = String(r.status ?? r.e ?? 'Aktif').trim();
+
+  return code === u &&
+         pass === p &&
+         status === 'Aktif';
+ });
 
  if(!x){
-  alert('Kullanıcı kodu veya şifre hatalı');
+  alert('Kullanıcı kodu veya şifre hatalı.\n\nDemo giriş:\nADMIN\n1234');
   return;
  }
+
+ let userName = x.name ?? x.b ?? 'Arda YIŞ';
+ let userRole = x.role ?? x.c ?? 'Sistem Yöneticisi';
 
  localStorage.setItem(
   'ardaSession',
   JSON.stringify({
-   name:x.b,
-   role:x.c
+   name: userName,
+   role: userRole
   })
  );
 
- document.getElementById('login')
-  .classList.remove('show');
+ document.getElementById('login').classList.remove('show');
+ document.getElementById('role').textContent = userRole;
 
- document.getElementById('role')
-  .textContent=x.c;
+ toast('Hoş geldiniz, ' + userName);
 }
-
-function backup(){
-
- let a=document.createElement('a');
-
- a.href=
-  URL.createObjectURL(
-   new Blob(
-    [JSON.stringify(db,null,2)],
-    {type:'application/json'}
-   )
-  );
-
- a.download='arda-yis-yedek.json';
-
- a.click();
-
- toast('Yedek indirildi');
-}
-
-function restore(f){
-
- if(!f)
-  return;
-
- let r=new FileReader;
-
- r.onload=()=>{
-
-  try{
-
-   db=JSON.parse(r.result);
-
-   save();
-
-   location.reload();
-
-  }catch(e){
-
-   alert('Yedek dosyası geçersiz');
-
-  }
-
- };
-
- r.readAsText(f);
-}
-
-build();
-
-dashboard();
-
-login();
-</script>
-</body>
-</html>
