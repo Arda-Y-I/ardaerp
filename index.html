@@ -1,514 +1,1362 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Arda YIŞ ERP</title>
+<style>
+:root{--nav:#172235;--nav2:#243a5b;--pri:#148391;--acc:#59d5cf;--bg:#f2f6fa;--card:#fff;--line:#d4dee7;--text:#17273a;--muted:#708196;--ok:#18a56c;--warn:#dda11b;--bad:#d74a59;--pur:#7656d5;--orange:#ec7a2a}
+*{box-sizing:border-box}html,body{margin:0;height:100%;font-family:Segoe UI,Arial,sans-serif;color:var(--text);background:var(--bg)}
+button,input,select,textarea{font:inherit}button{cursor:pointer}
+.app{height:100vh;display:flex;overflow:hidden}.side{width:285px;min-width:285px;background:linear-gradient(180deg,#182336,#101a2a);color:#fff;display:flex;flex-direction:column}
+.logo{height:72px;padding:0 21px;display:flex;align-items:center;font-size:25px;font-weight:800;border-bottom:1px solid #ffffff12}.logo span{color:var(--acc)}
+.firm{margin:14px;padding:14px;border-radius:9px;background:linear-gradient(135deg,#294162,#22344f);border:1px solid #ffffff12}.firm small{color:#a2b4c5;font-size:10px;text-transform:uppercase}.firm strong{display:block;margin-top:4px}.firm em{display:block;color:#91a7bc;font-style:normal;font-size:10px;margin-top:5px}
+.nav{flex:1;overflow:auto;padding:4px 10px 18px}.group-title{padding:13px 10px 6px;color:#7e95ab;font-size:10px;font-weight:800;letter-spacing:1px}
+.group{margin-bottom:5px}.mainnav{width:100%;border:0;background:transparent;color:#dce6ef;padding:10px;border-radius:7px;display:flex;align-items:center;gap:9px;text-align:left}.mainnav:hover{background:#244565}.group.open .mainnav{background:linear-gradient(90deg,#148391,#2e7486);box-shadow:inset 4px 0 var(--acc)}.num{width:23px;color:#8ca4ba;font-size:10px}.ico{width:20px;color:#8fe1dd;text-align:center}.label{flex:1;font-size:12px;font-weight:700}.arrow{font-size:12px;color:#8ea1b2}.group.open .arrow{transform:rotate(90deg)}
+.sub{display:none;padding:2px 0 6px 32px}.group.open .sub{display:block}.sub button{width:100%;border:0;background:transparent;color:#afc0d1;padding:7px 8px;border-radius:5px;text-align:left;font-size:10px}.sub button:hover{background:#213c5a;color:#fff}.sub button.active{background:#e1f7f4;color:#0d6067;font-weight:800}
+.sidefoot{padding:10px 14px;border-top:1px solid #ffffff12;color:#8095aa;font-size:10px}
+.main{flex:1;min-width:0;display:flex;flex-direction:column}.top{height:72px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:16px;padding:0 20px}.top h2{font-size:18px;margin:0;white-space:nowrap}.search{flex:1;max-width:560px}.search input{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:7px;background:#f8fbfd;outline:none}.tools{margin-left:auto;display:flex;align-items:center;gap:7px}.iconbtn{width:37px;height:37px;border:1px solid var(--line);border-radius:7px;background:#fff}.user{display:flex;align-items:center;gap:9px;margin-left:3px;padding-left:12px;border-left:1px solid var(--line)}.avatar{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--pri),var(--pur));color:#fff;font-size:11px;font-weight:800}.user b{display:block;font-size:12px}.user small{color:var(--muted);font-size:10px}
+.content{flex:1;overflow:auto;padding:20px}.head{display:flex;justify-content:space-between;gap:12px;margin-bottom:15px}.head h1{font-size:22px;margin:0}.head p{font-size:12px;color:var(--muted);margin:5px 0 0}.btns{display:flex;gap:7px;flex-wrap:wrap}.btn{padding:8px 12px;border:1px solid var(--line);border-radius:6px;background:#fff;color:#42566a;font-size:12px;font-weight:700}.btn:hover{background:#f4f7fa}.primary{background:linear-gradient(135deg,var(--pri),#2b9099);border-color:var(--pri);color:#fff}.danger{background:var(--bad);border-color:var(--bad);color:#fff}.success{background:var(--ok);border-color:var(--ok);color:#fff}.sm{padding:6px 9px;font-size:10px}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:11px;margin-bottom:14px}.kpi{background:#fff;border:1px solid var(--line);border-top:4px solid var(--acc);border-radius:8px;padding:14px;box-shadow:0 3px 14px #16344d0d}.kpi:nth-child(2){border-top-color:var(--pur)}.kpi:nth-child(3){border-top-color:var(--ok)}.kpi:nth-child(4){border-top-color:var(--orange)}.kpi:nth-child(5){border-top-color:var(--bad)}.kpi small{color:var(--muted)}.kpi strong{display:block;font-size:24px;margin:5px 0}
+.grid2{display:grid;grid-template-columns:1.3fr 1fr;gap:14px;margin-bottom:14px}.card{background:#fff;border:1px solid var(--line);border-radius:8px;box-shadow:0 3px 14px #16344d08}.cardhead{padding:13px 15px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;font-size:12px;font-weight:800}.cardbody{padding:14px}
+.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.quick button{border:1px solid var(--line);border-left:4px solid var(--acc);background:#fbfdfe;border-radius:7px;padding:12px;text-align:left}.quick button:nth-child(2n){border-left-color:var(--pur)}.quick button:nth-child(3n){border-left-color:var(--ok)}.quick b{display:block;font-size:11px}.quick small{color:var(--muted);display:block;margin-top:4px;font-size:9px}
+.subtabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}.subtabs button{padding:7px 9px;border:1px solid var(--line);background:#fff;border-radius:6px;font-size:10px;color:#51667a}.subtabs button.active{background:var(--pri);border-color:var(--pri);color:#fff}
+.workflow{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-bottom:14px}.step{background:#fff;border:1px solid var(--line);border-top:3px solid var(--acc);padding:9px;border-radius:7px;text-align:center;color:var(--muted);font-size:9px}.step b{display:block;color:var(--text);font-size:10px;margin-bottom:3px}
+.tablebox{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:auto}.filter{padding:10px;background:#edf4f7;border-bottom:1px solid var(--line);display:flex;gap:7px}.filter input{padding:8px 9px;border:1px solid var(--line);border-radius:6px;min-width:240px;font-size:11px}table{border-collapse:collapse;width:100%;min-width:740px}th,td{padding:9px 10px;border-bottom:1px solid #edf0f3;text-align:left;font-size:10px}th{background:#e7f0f5;color:#3d566c;font-size:9px;text-transform:uppercase}tr:hover td{background:#f1fbfa}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.module{background:#fff;border:1px solid var(--line);border-radius:8px;padding:13px}.module:hover{border-color:#73bdc1}.module b{font-size:11px}.module small{display:block;color:var(--muted);font-size:9px;margin-top:5px}.module .btn{margin-top:9px}
+.notice{padding:10px 12px;border-left:4px solid var(--acc);background:#eaf8f8;border-radius:5px;font-size:10px;margin-bottom:12px}
+.modal{position:fixed;inset:0;background:#091625aa;backdrop-filter:blur(5px);display:none;align-items:center;justify-content:center;padding:20px;z-index:100}.modal.show{display:flex}.modalbox{width:min(850px,100%);max-height:90vh;overflow:auto;background:#f4f8fb;border-radius:14px;box-shadow:0 24px 90px #0005}.modalhead{padding:16px 19px;background:linear-gradient(135deg,#182336,#148391,#59d5cf);color:#fff;display:flex;justify-content:space-between}.modalhead b{font-size:15px}.close{border:1px solid #ffffff55;background:#ffffff18;color:#fff;border-radius:6px;font-size:20px}.modalbody{padding:20px}.form{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.field{background:#fff;border:1px solid var(--line);border-radius:9px;padding:11px}.field label{display:block;color:#5a6f81;font-size:9px;font-weight:800;text-transform:uppercase;margin-bottom:6px}.field input,.field select{width:100%;padding:9px;border:1px solid #c8d5df;border-radius:7px;outline:0}.field input:focus,.field select:focus{border-color:var(--acc);box-shadow:0 0 0 3px #59d5cf25}.modalfoot{padding:13px 19px;background:#fff;border-top:1px solid var(--line);display:flex;justify-content:flex-end;gap:7px}
+.login{position:fixed;inset:0;background:radial-gradient(circle at 15% 15%,#345e80,#182336 46%,#0b1420);display:flex;align-items:center;justify-content:center;z-index:200}.login.hidden{display:none}.loginbox{width:390px;max-width:92%;background:#fff;border-radius:13px;padding:25px;box-shadow:0 24px 80px #0005}.loginlogo{font-size:28px;font-weight:800}.loginlogo span{color:var(--pri)}.loginbox h1{font-size:19px;margin:7px 0}.loginbox p{font-size:11px;color:var(--muted);margin-bottom:17px}
+.toast{position:fixed;right:18px;bottom:18px;background:#19334b;color:#fff;border-left:4px solid var(--acc);padding:11px 13px;border-radius:7px;display:none;z-index:300;font-size:11px}.toast.show{display:block}
+@media(max-width:1100px){.kpis{grid-template-columns:repeat(3,1fr)}.grid2{grid-template-columns:1fr}.side{width:245px;min-width:245px}}@media(max-width:800px){.side{width:70px;min-width:70px}.logo{font-size:0;justify-content:center}.logo:after{content:'AY';font-size:22px}.firm,.num,.label,.arrow,.group-title{display:none}.mainnav{justify-content:center}.kpis{grid-template-columns:repeat(2,1fr)}.cards{grid-template-columns:1fr}.quick{grid-template-columns:repeat(2,1fr)}.form{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div id="login" class="login">
+<div class="loginbox">
+ <div class="loginlogo">Arda <span>YIŞ</span></div>
+ <h1>ERP Sistemi</h1>
+ <p>Yetkili kullanıcı girişi</p>
+ <div class="field"><label>Kullanıcı Kodu</label><input id="loginUser" value="ADMIN"></div>
+ <div class="field" style="margin-top:9px"><label>Şifre</label><input id="loginPass" type="password" value="1234"></div>
+ <button class="btn primary" style="width:100%;margin-top:12px" onclick="login()">Giriş Yap</button>
+ <div style="font-size:10px;color:#8291a0;margin-top:10px">Demo giriş: ADMIN / 1234</div>
+</div>
+</div>
+
+<div class="app">
+<aside class="side">
+ <div class="logo">Arda <span>YIŞ</span></div>
+ <div class="firm"><small>Aktif Firma</small><strong>Arda Üretim Ltd. Şti.</strong><em>2026 / 09 • Merkez</em></div>
+ <div id="nav" class="nav"></div>
+ <div class="sidefoot">Arda YIŞ ERP • Yönetim Sistemi</div>
+</aside>
+
+<main class="main">
+<header class="top">
+ <h2 id="pageTitle">Yönetim Merkezi / Dashboard</h2>
+ <div class="search"><input placeholder="ERP'de ara..." oninput="globalSearch(this.value)"></div>
+ <div class="tools">
+  <button class="iconbtn" onclick="backup()" title="Yedek">⇩</button>
+  <button class="iconbtn" onclick="document.getElementById('restore').click()" title="Geri yükle">⇧</button>
+  <button class="iconbtn" onclick="toast('Bildirimler kontrol edildi')">🔔</button>
+  <div class="user"><div class="avatar">AY</div><div><b>Arda YIŞ</b><small id="roleLabel">Sistem Yöneticisi</small></div></div>
+ </div>
+</header>
+<section id="content" class="content"></section>
+</main>
+</div>
+
+<input id="restore" type="file" accept=".json" style="display:none" onchange="restoreBackup(this.files[0])">
+
+<div id="modal" class="modal">
+ <div class="modalbox">
+  <div class="modalhead"><b id="modalTitle">Yeni Kayıt</b><button class="close" onclick="closeModal()">×</button></div>
+  <div id="modalBody" class="modalbody"></div>
+  <div class="modalfoot"><button class="btn" onclick="closeModal()">Vazgeç</button><button id="saveModal" class="btn primary">Kaydet</button></div>
+ </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script>
+/* =========================
+   BÖLÜM 1/3 - VERİ ve MENÜ
+   ========================= */
+const menuData={
+ "Yönetim Merkezi":["Dashboard","Firma / Şube","Dönem Yönetimi","Kullanıcılar","Roller","Yetki Matrisi","Onay Süreçleri","İşlem Logları","Bildirimler","İş Akışları","Görevler"],
+ "Tanımlar":["Ürünler","Ürün Grupları","Birimler","Depolar","Lokasyonlar","Vergiler","Fiyat Listeleri","Para Birimleri","Ödeme Tipleri","Ödeme Planları","Masraf Merkezleri"],
+ "Stok & Depo":["Stok Kartları","Giriş","Çıkış","Transfer","Sayım","Fire","Seri No","Lot","Barkod","Stok Hareketleri","Stok Değerleme","Min / Max","Rezervasyon","Kit / Set","Envanter Raporları"],
+ "Üretim":["Ürün Ağacı","Reçete","Operasyon","Rota","İş İstasyonu","Makine","Üretim Planı","Üretim Emri","İş Emri","MRP","Hammadde Tüketimi","Mamul Girişi","Fire / Hurda","Duruş","Üretim Maliyeti","Üretim Raporları"],
+ "Üretim Planlama":["Ana Üretim Planı","Talep Tahmini","Kapasite Planlama","Malzeme İhtiyaç Planlama","Kapasite Yükleme","Çizelgeleme","Darboğaz Analizi","Üretim Takvimi","Vardiya Planı","Termin Planlama","Plan Revizyonları"],
+ "Kalite Yönetimi":["Giriş Kalite","Üretim Kalite","Son Kontrol","Ölçüm","Kabul / Red","Uygunsuzluk","Düzeltici Faaliyet","Lot İzlenebilirliği","Numune Planı","Kalite Parametreleri","Kalite Raporları"],
+ "Bakım Yönetimi":["Makine","Arıza","Bakım Emri","Periyodik Bakım","Yedek Parça","Bakım Geçmişi","Bakım Maliyeti","Sayaçlar","Duruş Analizi","Bakım Planlama"],
+ "Sevkiyat & Lojistik":["Sevk Emirleri","Araçlar","Şoförler","Yükleme","Teslimat","Rota","Kargo","Sevkiyat Geçmişi","Paketleme","Teslim Belgesi"],
+ "Satış Yönetimi":["Müşteriler","Teklifler","Siparişler","Onay","Sevkiyat","İrsaliye","Faturalama","İadeler","Fiyat Listeleri","İskonto","Kampanyalar","Satış Hedefleri"],
+ "Satın Alma":["Tedarikçiler","Talepler","Teklifler","Teklif Karşılaştırma","Siparişler","Mal Kabul","İade","Fiyat Geçmişi","Tedarikçi Performansı","Satın Alma Planı"],
+ "CRM":["Müşteri Adayları","Fırsatlar","Görüşmeler","Aktiviteler","Hatırlatmalar","Teklif Takibi","Kampanyalar","Segmentler","Satış Hunisi"],
+ "Servis":["Servis Talepleri","Servis Emirleri","Teknisyenler","Arızalar","Garanti","Servis Geçmişi","Sözleşmeler","Yedek Parça"],
+ "Cari":["Müşteri Cari","Tedarikçi Cari","Borç / Alacak","Ekstre","Tahsilat","Ödeme","Vade","Risk","Mutabakat","Cari Yaşlandırma"],
+ "Finans":["Kasa","Banka","Gelir","Gider","Tahsilat","Ödeme","Nakit Akışı","Çek / Senet","Banka Ekstreleri","Finans Raporları"],
+ "Muhasebe":["Hesap Planı","Muhasebe Fişleri","Yevmiye","Büyük Defter","Mizan","Dönem İşlemleri","KDV","BA / BS","Amortisman","Muhasebe Raporları"],
+ "Maliyet Yönetimi":["Maliyet Merkezleri","Standart Maliyet","Fiili Maliyet","Üretim Maliyeti","Ürün Maliyeti","İşçilik Maliyeti","Genel Üretim Giderleri","Sapma Analizi","Kârlılık Analizi"],
+ "İnsan Kaynakları":["Personel","Departman","Pozisyon","Vardiya","İzin","Puantaj","Mesai","Performans","Kariyer","Eğitim","İşe Alım"],
+ "Bordro & Özlük":["Personel Özlük","Bordro Dönemi","Bordro Hesaplama","SGK","Vergiler","Avanslar","Kesintiler","Bordro Raporları"],
+ "Proje Yönetimi":["Projeler","Görevler","Takvim","Maliyet","Gelir","Proje Kârlılığı","Kaynak Planlama","Hakediş","Proje Raporları"],
+ "Bütçe Yönetimi":["Bütçe Tanımları","Gelir Bütçesi","Gider Bütçesi","Departman Bütçesi","Yatırım Bütçesi","Gerçekleşme","Sapma Analizi","Bütçe Raporları"],
+ "Doküman Yönetimi":["Dokümanlar","Sözleşmeler","Prosedürler","Talimatlar","Revizyonlar","Arşiv","Doküman Onayları"],
+ "Araç & Filo":["Araç Kartları","Şoförler","Yakıt","Kilometre","Sigorta","Muayene","Bakım","Lastik","Filo Maliyetleri"],
+ "BI & Analitik":["Yönetim KPI","Satış Analitiği","Üretim Analitiği","Stok Analitiği","Finans Analitiği","Maliyet Analitiği","Kârlılık","Trendler","Panolar"],
+ "Rapor Merkezi":["Yönetim","Stok","Üretim","Satış","Satın Alma","Cari","Finans","Muhasebe","Maliyet","Kârlılık","KPI","Grafikler","Excel / PDF","Özel Rapor Tasarımcısı"],
+ "Sistem & Güvenlik":["Kullanıcı","Rol","Yetki","Yetki Matrisi","Şifre Politikası","Oturum","İşlem Logları","Yedekleme","Geri Yükleme","Sistem Ayarları","Erişim Kayıtları"]
+};
+
+const data={
+ products:[],
+ customers:[],
+ suppliers:[],
+ warehouses:[],
+ bom:[],
+ production:[],
+ sales:[],
+ purchases:[],
+ current:[],
+ finance:[],
+ accounting:[],
+ quality:[],
+ maintenance:[],
+ crm:[],
+ employees:[],
+ projects:[],
+ services:[],
+ users:[],
+ roles:[],
+ logs:[],
+ permissions:{}
+};
+
+function id(){return Date.now().toString(36)+Math.random().toString(36).slice(2,8)}
+function save(){localStorage.setItem("ardaYisERP",JSON.stringify(data))}
+function load(){
+ try{
+   const x=JSON.parse(localStorage.getItem("ardaYisERP")||"null");
+   if(x) Object.keys(data).forEach(k=>{if(x[k]!==undefined)data[k]=x[k]});
+ }catch(e){}
+ if(!data.users.length)data.users.push({id:id(),code:"ADMIN",name:"Arda YIŞ",role:"Sistem Yöneticisi",password:"1234",status:"Aktif"});
+ if(!data.roles.length)data.roles.push({id:id(),code:"SYSADMIN",name:"Sistem Yöneticisi",desc:"Tam yetki"});
+ if(!data.products.length)data.products.push({id:id(),code:"HM-001",name:"Çelik Sac",group:"Hammadde",unit:"KG",min:"500",price:"35"});
+ if(!data.customers.length)data.customers.push({id:id(),code:"C0001",name:"Demo Müşteri",tax:"1111111111",phone:"",email:""});
+ if(!data.suppliers.length)data.suppliers.push({id:id(),code:"T0001",name:"Demo Tedarikçi",tax:"2222222222",phone:"",email:""});
+ if(!data.warehouses.length)data.warehouses.push({id:id(),code:"D01",name:"Ana Depo",location:"Merkez",responsible:"Depo"});
+ save();
 }
-function action(n,i){
- let k=keyFor(n,menu[n][i]);
- k?newRec(k):toast(menu[n][i]+' ekranı hazır')
+const schemas={
+ products:{title:"Ürünler",fields:["code","name","group","unit","min","price"],labels:["Kod","Ürün Adı","Grup","Birim","Min. Stok","Fiyat"]},
+ customers:{title:"Müşteriler",fields:["code","name","tax","phone","email"],labels:["Cari Kodu","Müşteri Adı","Vergi No","Telefon","E-posta"]},
+ suppliers:{title:"Tedarikçiler",fields:["code","name","tax","phone","email"],labels:["Tedarikçi Kodu","Tedarikçi Adı","Vergi No","Telefon","E-posta"]},
+ warehouses:{title:"Depolar",fields:["code","name","location","responsible"],labels:["Depo Kodu","Depo Adı","Lokasyon","Sorumlu"]},
+ bom:{title:"Ürün Ağacı / Reçete",fields:["code","product","component","qty","unit"],labels:["Reçete No","Mamul","Hammadde","Miktar","Birim"]},
+ production:{title:"Üretim / İş Emri",fields:["orderNo","product","qty","date","status"],labels:["Emir No","Ürün","Miktar","Tarih","Durum"]},
+ sales:{title:"Satış Siparişleri",fields:["orderNo","customer","product","qty","amount","status"],labels:["Sipariş No","Müşteri","Ürün","Miktar","Tutar","Durum"]},
+ purchases:{title:"Satın Alma Siparişleri",fields:["orderNo","supplier","product","qty","amount","status"],labels:["Sipariş No","Tedarikçi","Ürün","Miktar","Tutar","Durum"]},
+ current:{title:"Cari Hareketler",fields:["date","account","type","amount","description"],labels:["Tarih","Cari","İşlem","Tutar","Açıklama"]},
+ finance:{title:"Finans Hareketleri",fields:["date","account","type","amount","description"],labels:["Tarih","Hesap","İşlem","Tutar","Açıklama"]},
+ accounting:{title:"Muhasebe Fişleri",fields:["date","voucher","debit","credit","amount"],labels:["Tarih","Fiş No","Borç","Alacak","Tutar"]},
+ quality:{title:"Kalite Kayıtları",fields:["date","product","lot","control","result","note"],labels:["Tarih","Ürün","Lot","Kontrol","Sonuç","Not"]},
+ maintenance:{title:"Bakım Emirleri",fields:["machine","type","date","responsible","status"],labels:["Makine","Tip","Tarih","Sorumlu","Durum"]},
+ crm:{title:"CRM Fırsatları",fields:["customer","subject","value","stage","next"],labels:["Müşteri Adayı","Fırsat","Değer","Aşama","Sonraki Tarih"]},
+ employees:{title:"Personel",fields:["code","name","department","position","shift","status"],labels:["Personel No","Ad Soyad","Departman","Pozisyon","Vardiya","Durum"]},
+ projects:{title:"Projeler",fields:["code","name","customer","budget","status"],labels:["Proje No","Proje Adı","Müşteri","Bütçe","Durum"]},
+ services:{title:"Servis Talepleri",fields:["ticket","customer","device","problem","technician","status"],labels:["Servis No","Müşteri","Cihaz","Arıza","Teknisyen","Durum"]},
+ users:{title:"Kullanıcılar",fields:["code","name","role","password","status"],labels:["Kullanıcı Kodu","Ad Soyad","Rol","Şifre","Durum"]},
+ roles:{title:"Roller",fields:["code","name","desc"],labels:["Rol Kodu","Rol Adı","Açıklama"]},
+ logs:{title:"İşlem Logları",fields:["date","user","action","module","detail"],labels:["Tarih","Kullanıcı","İşlem","Modül","Detay"]}
+};
+load();/* === DEVAM 2/3 === */
+
+function esc(v){
+ return String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
 }
 
-function keyFor(n,l){
- let map={
-  Üretim:'production',
-  'Üretim Planlama':'production',
-  'Satış Yönetimi':'sales',
-  'Satın Alma':'purchases',
-  'Stok & Depo':'products',
-  Tanımlar:'products',
-  Cari:'current',
-  Finans:'finance',
-  Muhasebe:'accounting',
-  'Kalite Yönetimi':'quality',
-  'Bakım Yönetimi':'maintenance',
-  CRM:'crm',
-  Servis:'services',
-  'İnsan Kaynakları':'employees',
-  'Proje Yönetimi':'projects',
-  'Sistem & Güvenlik':'users',
-  Yönetim:'users'
- };
-
- if(l==='Ürünler'||l==='Stok Kartları')return'products';
-
- if(l==='Müşteriler'||l==='Müşteri Cari')return'customers';
-
- if(l==='Tedarikçiler'||l==='Tedarikçi Cari')return'suppliers';
-
- if(l==='Depolar')return'warehouses';
-
- if(l==='Ürün Ağacı'||l==='Reçete')return'bom';
-
- if(l==='Üretim Emri'||l==='İş Emri')return'production';
-
- if(l==='Siparişler'||l==='Teklifler')
-   return n==='Satın Alma'?'purchases':'sales';
-
- return map[n];
+function toast(t){
+ const x=document.getElementById("toast");
+ x.textContent=t;
+ x.classList.add("show");
+ setTimeout(()=>x.classList.remove("show"),2300);
 }
 
-function table(k){
+function log(action,module,detail=""){
+ data.logs.unshift({
+  id:id(),
+  date:new Date().toLocaleString("tr-TR"),
+  user:"ADMIN",
+  action,
+  module,
+  detail
+ });
+ data.logs=data.logs.slice(0,500);
+ save();
+}
 
- let c=document.getElementById('content');
- let fs=fields[k];
- let rows=db[k]||[];
+function buildMenu(){
 
- c.insertAdjacentHTML(
-  'beforeend',
-  '<div class="table">'+
+ const n=document.getElementById("nav");
+ n.innerHTML="";
+
+ Object.keys(menuData).forEach((name,index)=>{
+
+   const g=document.createElement("div");
+   g.className="group";
+   g.dataset.name=name;
+
+   const title=document.createElement("div");
+   title.className="group-title";
+   title.textContent=
+     index===0
+      ? "YÖNETİM"
+      : index<9
+       ? "OPERASYON"
+       : index<18
+        ? "ERP"
+        : "SİSTEM";
+
+   if(index===0 || index===9 || index===18)
+     n.appendChild(title);
+
+   const main=document.createElement("button");
+   main.className="mainnav";
+
+   main.innerHTML=
+    '<span class="num">'+
+    String(index+1).padStart(2,"0")+
+    '</span>'+
+    '<span class="ico">◆</span>'+
+    '<span class="label">'+
+    esc(name)+
+    '</span>'+
+    '<span class="arrow">›</span>';
+
+   main.onclick=()=>{
+     toggleGroup(g,name);
+   };
+
+   const sub=document.createElement("div");
+   sub.className="sub";
+
+   menuData[name].forEach((label,i)=>{
+
+     const b=document.createElement("button");
+
+     b.textContent=
+       String(i+1).padStart(2,"0")+
+       " "+
+       label;
+
+     b.onclick=e=>{
+       openSub(e,name,i);
+     };
+
+     sub.appendChild(b);
+   });
+
+   g.appendChild(main);
+   g.appendChild(sub);
+
+   n.appendChild(g);
+ });
+}
+
+function toggleGroup(g,name){
+
+ document.querySelectorAll(".group").forEach(x=>{
+   if(x!==g)
+     x.classList.remove("open");
+ });
+
+ g.classList.toggle("open");
+
+ openSub(null,name,0);
+}
+
+function openSub(e,name,index){
+
+ const label=menuData[name][index];
+
+ const g=[
+   ...document.querySelectorAll(".group")
+ ].find(x=>x.dataset.name===name);
+
+ if(g)
+   g.classList.add("open");
+
+ document.querySelectorAll(".sub button")
+   .forEach(x=>x.classList.remove("active"));
+
+ if(e&&e.currentTarget)
+   e.currentTarget.classList.add("active");
+
+ document.getElementById("pageTitle").textContent=
+   name+
+   " / "+
+   label;
+
+ renderModule(name,index,label);
+}
+
+function setActiveSub(name,index){
+
+ const g=[
+  ...document.querySelectorAll(".group")
+ ].find(x=>x.dataset.name===name);
+
+ if(!g)
+   return;
+
+ [...g.querySelectorAll(".sub button")][index]?.classList.add("active");
+}
+
+function header(title,desc,buttons=""){
+
+ document.getElementById("content").innerHTML=
+   '<div class="head">'+
+    '<div>'+
+     '<h1>'+esc(title)+'</h1>'+
+     '<p>'+esc(desc)+'</p>'+
+    '</div>'+
+    '<div class="btns">'+
+     buttons+
+    '</div>'+
+   '</div>';
+}
+
+const map={
+
+ "Ürünler":"products",
+ "Stok Kartları":"products",
+ "Müşteriler":"customers",
+ "Müşteri Cari":"customers",
+
+ "Tedarikçiler":"suppliers",
+ "Tedarikçi Cari":"suppliers",
+
+ "Depolar":"warehouses",
+
+ "Ürün Ağacı":"bom",
+ "Reçete":"bom",
+
+ "Üretim Emri":"production",
+ "İş Emri":"production",
+ "Üretim Planı":"production",
+ "Ana Üretim Planı":"production",
+
+ "Teklifler":"sales",
+ "Siparişler":"sales",
+ "Satış Siparişleri":"sales",
+
+ "Talepler":"purchases",
+ "Satın Alma Siparişleri":"purchases",
+
+ "Fırsatlar":"crm",
+
+ "Servis Talepleri":"services",
+
+ "Personel":"employees",
+ "Projeler":"projects",
+
+ "Kasa":"finance",
+ "Banka":"finance",
+ "Gelir":"finance",
+ "Gider":"finance",
+
+ "Tahsilat":"current",
+ "Ödeme":"current",
+
+ "Muhasebe Fişleri":"accounting",
+ "Hesap Planı":"accounting",
+
+ "Giriş Kalite":"quality",
+ "Üretim Kalite":"quality",
+
+ "Bakım Emri":"maintenance",
+ "Makine":"maintenance",
+
+ "Kullanıcı":"users",
+ "Kullanıcılar":"users",
+
+ "Rol":"roles",
+ "Roller":"roles",
+
+ "İşlem Logları":"logs"
+};
+
+function renderModule(name,index,label){
+
+ if(
+  name==="Yönetim Merkezi" &&
+  index===0
+ ){
+  dashboard();
+  return;
+ }
+
+ if(
+  name==="Yönetim Merkezi" &&
+  index===5
+ ){
+  permissionsPage();
+  return;
+ }
+
+ let key=
+   map[label]||
+   map[name]||
+   null;
+
+ let buttons=
+   key
+    ? '<button class="btn primary" onclick="openForm(\''+
+      key+
+      '\')">+ Yeni Kayıt</button>'
+    : "";
+
+ if(
+  label==="Giriş"||
+  label==="Çıkış"||
+  label==="Transfer"||
+  label==="Sayım"||
+  label==="Fire"
+ ){
+  buttons=
+   '<button class="btn primary" onclick="stockForm(\''+
+   label+
+   '\')">+ Stok Hareketi</button>';
+ }
+
+ if(label==="MRP"){
+  buttons=
+   '<button class="btn primary" onclick="runMRP()">MRP Hesapla</button>';
+ }
+
+ header(
+  label,
+  "ERP işlemleri ve kayıt yönetimi",
+  buttons
+ );
+
+ const tabs=
+  menuData[name].map((s,i)=>
+   '<button class="'+
+   (i===index?"active":"")+
+   '" onclick="openSub(event,\''+
+   name.replace(/'/g,"\\'")+
+   '\','+
+   i+
+   ')">'+
+   String(i+1).padStart(2,"0")+
+   " "+
+   esc(s)+
+   '</button>'
+  ).join("");
+
+ document.getElementById("content")
+  .insertAdjacentHTML(
+   "beforeend",
+   '<div class="subtabs">'+
+   tabs+
+   "</div>"
+  );
+
+ if(
+  [
+   "Üretim",
+   "Üretim Planlama",
+   "Satış Yönetimi",
+   "Satın Alma"
+  ].includes(name)
+ ){
+
+  document.getElementById("content")
+   .insertAdjacentHTML(
+    "beforeend",
+    '<div class="workflow">'+
+     '<div class="step"><b>01</b>Talep</div>'+
+     '<div class="step"><b>02</b>Plan</div>'+
+     '<div class="step"><b>03</b>Operasyon</div>'+
+     '<div class="step"><b>04</b>Kontrol</div>'+
+     '<div class="step"><b>05</b>Onay</div>'+
+     '<div class="step"><b>06</b>Teslim</div>'+
+    '</div>'
+   );
+ }
+
+ if(key){
+   renderTable(key);
+ }else{
+   renderTools(name,label);
+ }
+
+ setActiveSub(name,index);
+}
+
+function renderTools(name,label){
+
+ const arr=
+  menuData[name].slice(0,9);
+
+ document.getElementById("content")
+  .insertAdjacentHTML(
+   "beforeend",
+
+   '<div class="cards">'+
+
+   arr.map((x,i)=>
+
+    '<div class="module">'+
+
+     '<b>'+
+      String(i+1).padStart(2,"0")+
+      " "+
+      esc(x)+
+     '</b>'+
+
+     '<small>'+
+      'Bu ERP işlemini açıp yönetebilirsiniz.'+
+     '</small>'+
+
+     '<button class="btn sm" onclick="openSub(null,\''+
+       name.replace(/'/g,"\\'")+
+       '\','+
+       i+
+     ')">Aç</button>'+
+
+    '</div>'
+
+   ).join("")+
+
+   "</div>"
+  );
+}
+
+function renderTable(key){
+
+ const s=schemas[key];
+ const rows=data[key]||[];
+
+ const html=
+  '<div class="tablebox">'+
+
    '<div class="filter">'+
-    '<input id="flt" placeholder="Listede ara..." oninput="flt(\''+
-      k+
-    '\',this.value)">'+
-    '<button class="btn sm primary" onclick="newRec(\''+
-      k+
+
+    '<input id="filterInput" '+
+     'placeholder="'+
+     esc(s.title)+
+     ' içinde ara..." '+
+     'oninput="filterTable(\''+
+     key+
+     '\',this.value)">'+
+
+    '<button class="btn sm primary" onclick="openForm(\''+
+     key+
     '\')">+ Yeni Kayıt</button>'+
+
    '</div>'+
+
    '<table>'+
+
     '<thead>'+
      '<tr>'+
-      fs.map(f=>'<th>'+f+'</th>').join('')+
-      '<th>İşlem</th>'+
+      s.labels.map(x=>
+       "<th>"+x+"</th>"
+      ).join("")+
+
+      "<th>İşlem</th>"+
+
      '</tr>'+
     '</thead>'+
-    '<tbody id="rows">'+
-      rowsHTML(k,rows)+
+
+    '<tbody id="tableRows">'+
+     rowsHtml(key,rows)+
     '</tbody>'+
+
    '</table>'+
-  '</div>'
- );
+
+  '</div>';
+
+ document.getElementById("content")
+  .insertAdjacentHTML(
+   "beforeend",
+   html
+  );
 }
 
-function rowsHTML(k,rows){
+function rowsHtml(key,rows){
 
- let fs=fields[k];
+ const s=schemas[key];
 
  if(!rows.length){
+
   return '<tr>'+
-   '<td colspan="'+(fs.length+1)+'" style="text-align:center;padding:30px;color:#77899b">'+
+   '<td colspan="'+
+     (s.fields.length+1)+
+   '" style="text-align:center;padding:28px;color:#7b8c9d">'+
    'Kayıt bulunamadı'+
    '</td>'+
-   '</tr>';
+  '</tr>';
  }
 
  return rows.map(r=>
+
   '<tr>'+
-   fs.map((f,i)=>
+
+   s.fields.map(f=>
     '<td>'+
-      esc(r[String.fromCharCode(97+i)]||'')+
+      esc(r[f]||"")+
     '</td>'
-   ).join('')+
+   ).join("")+
+
    '<td>'+
-    '<button class="btn sm" onclick="editRec(\''+
-      k+
-      '\',\''+
-      r.id+
-    '\')">Düzenle</button> '+
-    '<button class="btn sm danger" onclick="delRec(\''+
-      k+
-      '\',\''+
-      r.id+
-    '\')">Sil</button>'+
+
+    '<button class="btn sm" onclick="openForm(\''+
+      key+
+      '\','+
+      JSON.stringify(r.id)+
+    ')">Düzenle</button> '+
+
+    '<button class="btn sm danger" onclick="removeRow(\''+
+      key+
+      '\','+
+      JSON.stringify(r.id)+
+    ')">Sil</button>'+
+
    '</td>'+
+
   '</tr>'
- ).join('');
+
+ ).join("");
 }
 
-function flt(k,q){
+function filterTable(key,q){
 
- let rs=db[k].filter(r=>
-  JSON.stringify(r)
-   .toLowerCase()
-   .includes(q.toLowerCase())
- );
-
- document.getElementById('rows').innerHTML=
-  rowsHTML(k,rs);
-}
-
-function newRec(k,id=null){
-
- let fs=fields[k];
-
- let r=id
-  ? db[k].find(x=>x.id===id)
-  : {};
-
- let inputs=fs.map((f,i)=>
-  '<div class="field">'+
-   '<label>'+f+'</label>'+
-   '<input id="f'+i+'" value="'+
-      esc(r[String.fromCharCode(97+i)]||'')+
-   '">'+
-  '</div>'
- ).join('');
-
- document.getElementById('mtitle').textContent=
-  (id?'Düzenle: ':'Yeni Kayıt: ')+
-  k.toUpperCase();
-
- document.getElementById('mbody').innerHTML=
-  '<div style="font-size:11px;color:#687b8d;margin-bottom:12px">'+
-   'Bilgileri doldurun ve Kaydet ile ERP kaydını oluşturun.'+
-  '</div>'+
-  '<div class="form">'+
-   inputs+
-  '</div>';
-
- document.getElementById('msave').onclick=()=>{
-
-  let o=id
-   ? db[k].find(x=>x.id===id)
-   : {id:uid()};
-
-  fs.forEach((f,i)=>{
-   o[String.fromCharCode(97+i)] =
-    document.getElementById('f'+i).value;
-  });
-
-  if(!id)
-   db[k].unshift(o);
-
-  save();
-  closeM();
-
-  toast('Kayıt kaydedildi');
-
-  location.reload();
- };
-
- document.getElementById('modal').classList.add('show');
-}
-
-function editRec(k,id){
- newRec(k,id);
-}
-
-function delRec(k,id){
-
- if(!confirm('Kaydı silmek istiyor musunuz?'))
-  return;
-
- db[k]=db[k].filter(x=>x.id!==id);
-
- save();
-
- toast('Kayıt silindi');
-
- location.reload();
-}
-
-function closeM(){
- document.getElementById('modal').classList.remove('show');
-}
-
-function dashboard(){
-
- shell(
-  'Dashboard',
-  'Yönetim Merkezi',
-  '<button class="btn primary" onclick="newRec(\'products\')">+ Yeni Ürün</button>'
- );
-
- let prod=db.products.length;
- let users=db.users.length;
- let so=db.sales.length;
- let po=db.purchases.length;
-
- document.getElementById('content').insertAdjacentHTML(
-  'beforeend',
-
-  '<div class="kpis">'+
-
-   '<div class="kpi">'+
-    '<small>Ürün</small>'+
-    '<strong>'+prod+'</strong>'+
-    '<small>Stok kartı</small>'+
-   '</div>'+
-
-   '<div class="kpi">'+
-    '<small>Kullanıcı</small>'+
-    '<strong>'+users+'</strong>'+
-    '<small>Yetkili hesap</small>'+
-   '</div>'+
-
-   '<div class="kpi">'+
-    '<small>Satış Siparişi</small>'+
-    '<strong>'+so+'</strong>'+
-    '<small>Kayıt</small>'+
-   '</div>'+
-
-   '<div class="kpi">'+
-    '<small>Satın Alma</small>'+
-    '<strong>'+po+'</strong>'+
-    '<small>Kayıt</small>'+
-   '</div>'+
-
-   '<div class="kpi">'+
-    '<small>Açık Üretim</small>'+
-    '<strong>'+
-      db.production.filter(x=>x.f!=='Tamamlandı').length+
-    '</strong>'+
-    '<small>Emir</small>'+
-   '</div>'+
-
-  '</div>'+
-
-  '<div class="grid2">'+
-
-   '<div class="card">'+
-    '<div class="chead">Hızlı İşlemler</div>'+
-    '<div class="cbody">'+
-     '<div class="quick">'+
-
-      [['products','Yeni Ürün'],
-       ['customers','Yeni Müşteri'],
-       ['suppliers','Yeni Tedarikçi'],
-       ['production','Üretim Emri'],
-       ['sales','Satış Siparişi'],
-       ['purchases','Satın Alma']]
-
-      .map(x=>
-       '<button class="q" onclick="newRec(\''+
-         x[0]+
-       '\')">'+
-        '<b>'+x[1]+'</b>'+
-        '<small>ERP kaydı oluştur</small>'+
-       '</button>'
-      ).join('')+
-
-     '</div>'+
-    '</div>'+
-   '</div>'+
-
-   '<div class="card">'+
-    '<div class="chead">Yönetim</div>'+
-    '<div class="cbody">'+
-     '<div style="line-height:2;font-size:11px">'+
-       'Kullanıcı ve rol yönetimi<br>'+
-       'Yetki matrisi<br>'+
-       'İşlem logları<br>'+
-       'Onay süreçleri'+
-     '</div>'+
-    '</div>'+
-   '</div>'+
-
-  '</div>'
- );
-}
-
-function permissions(){
-
- shell(
-  'Yetki Matrisi',
-  'Personele modül ve işlem bazında yetki verin.',
-  '<button class="btn primary" onclick="savePerm()">Yetkileri Kaydet</button>'
- );
-
- let roles=[
-  'Yönetici',
-  'Üretim',
-  'Depo',
-  'Satış',
-  'Satın Alma',
-  'Muhasebe',
-  'Kalite',
-  'Bakım',
-  'İK'
- ];
-
- let acts=[
-  'Görüntüle',
-  'Ekle',
-  'Düzenle',
-  'Sil',
-  'Onayla',
-  'Dışa Aktar'
- ];
-
- document.getElementById('content').insertAdjacentHTML(
-  'beforeend',
-
-  '<div class="card">'+
-   '<div class="cbody" style="overflow:auto">'+
-    '<table style="min-width:1000px">'+
-     '<thead>'+
-      '<tr>'+
-       '<th>Modül</th>'+
-       '<th>Rol</th>'+
-       acts.map(a=>'<th>'+a+'</th>').join('')+
-      '</tr>'+
-     '</thead>'+
-     '<tbody id="perm"></tbody>'+
-    '</table>'+
-   '</div>'+
-  '</div>'
- );
-
- let b=document.getElementById('perm');
-
- Object.keys(menu).forEach(m=>
-
-  roles.forEach(r=>
-
-   b.insertAdjacentHTML(
-    'beforeend',
-
-    '<tr>'+
-     '<td>'+esc(m)+'</td>'+
-     '<td>'+esc(r)+'</td>'+
-
-     acts.map(a=>
-      '<td style="text-align:center">'+
-       '<input type="checkbox" '+
-       'data-k="'+esc(m)+'" '+
-       'data-r="'+esc(r)+'" '+
-       'data-a="'+esc(a)+'">'+
-      '</td>'
-     ).join('')+
-
-    '</tr>'
-   )
-  )
- );
-}
-
-function savePerm(){
-
- let p={};
-
- document.querySelectorAll('#perm input')
-  .forEach(x=>{
-
-   if(x.checked){
-    p[
-     x.dataset.k+
-     '|'+
-     x.dataset.r+
-     '|'+
-     x.dataset.a
-    ]=1;
-   }
-
-  });
-
- localStorage.setItem(
-  'ardaPerm',
-  JSON.stringify(p)
- );
-
- toast('Yetkiler kaydedildi');
-}
-
-function searchAll(q){
-
- if(q.length<2)
-  return;
-
- for(let k of keys){
-
-  let x=db[k].find(r=>
+ const rows=
+  (data[key]||[]).filter(r=>
    JSON.stringify(r)
     .toLowerCase()
     .includes(q.toLowerCase())
   );
 
-  if(x){
-   newRec(k,x.id);
-   return;
-  }
- }
-
- toast('Arama sonucu bulunamadı');
+ document.getElementById("tableRows")
+  .innerHTML=
+   rowsHtml(key,rows);
 }
 
-function login(){
+function openForm(key,editId=null){
 
- let u=document.getElementById('lu')
-  .value
-  .trim()
-  .toUpperCase();
+ const s=schemas[key];
 
- let p=document.getElementById('lp')
-  .value
-  .trim();
+ const r=
+  editId
+   ? data[key].find(x=>x.id===editId)
+   : {};
 
- if(u==='ADMIN' && p==='1234'){
+ document.getElementById("modalTitle")
+  .textContent=
+   (editId
+    ?"Düzenle • "
+    :"Yeni Kayıt • ")+
+   s.title;
 
-  localStorage.setItem(
-   'ardaSession',
-   JSON.stringify({
-    name:'Arda YIŞ',
-    role:'Sistem Yöneticisi'
-   })
-  );
+ document.getElementById("modalBody")
+  .innerHTML=
 
-  document.getElementById('login')
-   .classList.remove('show');
+   '<div class="notice">'+
+    'Bilgileri doldurun. Kaydettiğiniz kayıt hemen ERP listesine eklenir.'+
+   '</div>'+
 
-  document.getElementById('role')
-   .textContent='Sistem Yöneticisi';
+   '<div class="form">'+
 
-  toast('Giriş başarılı. Hoş geldiniz Arda YIŞ');
+    s.fields.map((f,i)=>
 
-  return;
- }
+     '<div class="field">'+
+      '<label>'+
+       s.labels[i]+
+      '</label>'+
 
- alert(
-  'Hatalı giriş!\n\n'+
-  'Kullanıcı: ADMIN\n'+
-  'Şifre: 1234'
- );
-}
+      '<input id="field_'+
+        i+
+      '" value="'+
+        esc(r[f]||"")+
+      '">'+
 
-function backup(){
+     '</div>'
 
- let a=document.createElement('a');
+    ).join("")+
 
- a.href=
-  URL.createObjectURL(
-   new Blob(
-    [JSON.stringify(db,null,2)],
-    {type:'application/json'}
-   )
-  );
+   '</div>';
 
- a.download='arda-yis-yedek.json';
+ document.getElementById("saveModal")
+  .onclick=()=>{
 
- a.click();
+   const obj=
+    editId
+     ? data[key].find(x=>x.id===editId)
+     : {id:id()};
 
- toast('Yedek indirildi');
-}
+   s.fields.forEach((f,i)=>{
 
-function restore(f){
+    obj[f]=
+     document.getElementById(
+      "field_"+i
+     ).value;
 
- if(!f)
-  return;
+   });
 
- let r=new FileReader;
-
- r.onload=()=>{
-
-  try{
-
-   db=JSON.parse(r.result);
+   if(!editId)
+    data[key].unshift(obj);
 
    save();
 
-   location.reload();
+   log(
+    editId
+     ?"Güncellendi"
+     :"Oluşturuldu",
+    s.title,
+    obj.name||
+    obj.code||
+    obj.orderNo||
+    "Kayıt"
+   );
 
-  }catch(e){
+   closeModal();
 
-   alert('Yedek dosyası geçersiz');
+   toast(
+    s.title+
+    " kaydedildi"
+   );
+
+   refresh();
+ };
+
+ document.getElementById("modal")
+  .classList.add("show");
+}
+
+function removeRow(key,idv){
+
+ if(!confirm("Bu kayıt silinsin mi?"))
+  return;
+
+ data[key]=
+  data[key].filter(x=>x.id!==idv);
+
+ save();
+
+ log(
+  "Silindi",
+  schemas[key]?.title||key
+ );
+
+ toast("Kayıt silindi");
+
+ refresh();
+}
+
+function refresh(){
+
+ const active=
+  document.querySelector(
+   ".group.open"
+  );
+
+ const title=
+  active?.dataset.name||
+  "Yönetim Merkezi";
+
+ const idx=
+  [
+   ...document.querySelectorAll(
+    ".group.open .sub button"
+   )
+  ].findIndex(
+   x=>x.classList.contains("active")
+  );
+
+ const realIndex=
+  Math.max(0,idx);
+
+ renderModule(
+  title,
+  realIndex,
+  menuData[title]?.[realIndex]||
+  "Dashboard"
+ );
+}
+
+function closeModal(){
+
+ document.getElementById("modal")
+  .classList.remove("show");
+}
+
+function dashboard(){
+
+ header(
+  "Dashboard",
+  "Yönetim Merkezi",
+  '<button class="btn primary" onclick="openForm(\'products\')">+ Yeni Ürün</button>'
+ );
+
+ const income=
+  data.finance
+   .filter(
+    x=>
+     x.type==="Gelir"||
+     x.type==="Tahsilat"
+   )
+   .reduce(
+    (a,x)=>a+Number(x.amount||0),
+    0
+   );
+
+ const expense=
+  data.finance
+   .filter(
+    x=>
+     x.type==="Gider"||
+     x.type==="Ödeme"
+   )
+   .reduce(
+    (a,x)=>a+Number(x.amount||0),
+    0
+   );
+
+ document.getElementById("content")
+  .insertAdjacentHTML(
+   "beforeend",
+
+   '<div class="kpis">'+
+
+    '<div class="kpi">'+
+     '<small>Ürün</small>'+
+     '<strong>'+
+      data.products.length+
+     '</strong>'+
+     '<small>Stok kartı</small>'+
+    '</div>'+
+
+    '<div class="kpi">'+
+     '<small>Müşteri</small>'+
+     '<strong>'+
+      data.customers.length+
+     '</strong>'+
+     '<small>Cari kart</small>'+
+    '</div>'+
+
+    '<div class="kpi">'+
+     '<small>Açık Üretim</small>'+
+     '<strong>'+
+      data.production.filter(
+       x=>x.status!=="Tamamlandı"
+      ).length+
+     '</strong>'+
+     '<small>Üretim / iş emri</small>'+
+    '</div>'+
+
+    '<div class="kpi">'+
+     '<small>Satış Siparişi</small>'+
+     '<strong>'+
+      data.sales.length+
+     '</strong>'+
+     '<small>Kayıt</small>'+
+    '</div>'+
+
+    '<div class="kpi">'+
+     '<small>Net Finans</small>'+
+     '<strong>₺'+
+      (income-expense)
+       .toLocaleString("tr-TR")+
+     '</strong>'+
+     '<small>Gelir - gider</small>'+
+    '</div>'+
+
+   '</div>'+
+
+   '<div class="grid2">'+
+
+    '<div class="card">'+
+     '<div class="cardhead">'+
+      'Hızlı İşlemler'+
+     '</div>'+
+
+     '<div class="cardbody">'+
+      '<div class="quick">'+
+
+       [
+        ["products","Yeni Ürün"],
+        ["customers","Yeni Müşteri"],
+        ["suppliers","Yeni Tedarikçi"],
+        ["production","Üretim Emri"],
+        ["sales","Satış Siparişi"],
+        ["purchases","Satın Alma"]
+       ]
+
+       .map(x=>
+
+        '<button onclick="openForm(\''+
+         x[0]+
+        '\')">'+
+         '<b>'+
+          x[1]+
+         '</b>'+
+         '<small>'+
+          'ERP kaydı oluştur'+
+         '</small>'+
+        '</button>'
+
+       ).join("")+
+
+      '</div>'+
+     '</div>'+
+
+    '</div>'+
+
+    '<div class="card">'+
+     '<div class="cardhead">'+
+      'Yönetim Özeti'+
+     '</div>'+
+
+     '<div class="cardbody">'+
+      '<b>Yetkili Kullanıcı:</b> Arda YIŞ<br><br>'+
+      '<b>Kullanıcı Sayısı:</b> '+
+       data.users.length+
+      '<br><br>'+
+      '<b>İşlem Logu:</b> '+
+       data.logs.length+
+     '</div>'+
+
+    '</div>'+
+
+   '</div>'
+  );
+}
+
+function stockForm(type){
+
+ const wrap=
+  document.getElementById(
+   "modalBody"
+  );
+
+ document.getElementById(
+  "modalTitle"
+ ).textContent=
+  "Stok • "+type;
+
+ wrap.innerHTML=
+  '<div class="notice">'+
+   'Stok hareketi kaydında ürün, depo ve miktar bilgilerini girin.'+
+  '</div>'+
+
+  '<div class="form">'+
+
+   '<div class="field">'+
+    '<label>Tarih</label>'+
+    '<input id="sf0" type="date" value="'+
+     new Date().toISOString().slice(0,10)+
+    '">'+
+   '</div>'+
+
+   '<div class="field">'+
+    '<label>Ürün</label>'+
+    '<select id="sf1">'+
+     data.products.map(
+      p=>'<option>'+
+       esc(p.name)+
+      '</option>'
+     ).join("")+
+    '</select>'+
+   '</div>'+
+
+   '<div class="field">'+
+    '<label>Depo</label>'+
+    '<select id="sf2">'+
+     data.warehouses.map(
+      p=>'<option>'+
+       esc(p.name)+
+      '</option>'
+     ).join("")+
+    '</select>'+
+   '</div>'+
+
+   '<div class="field">'+
+    '<label>Miktar</label>'+
+    '<input id="sf3" type="number" step="0.01">'+
+   '</div>'+
+
+   '<div class="field">'+
+    '<label>Lot / Seri</label>'+
+    '<input id="sf4">'+
+   '</div>'+
+
+   '<div class="field">'+
+    '<label>Açıklama</label>'+
+    '<input id="sf5">'+
+   '</div>'+
+
+  '</div>';
+
+ document.getElementById(
+  "saveModal"
+ ).onclick=()=>{
+
+   data.logs.unshift({
+    id:id(),
+    date:new Date().toLocaleString("tr-TR"),
+    user:"ADMIN",
+    action:"Stok "+type,
+    module:"Stok & Depo",
+    detail:
+     document.getElementById("sf3").value+
+     " "+
+     document.getElementById("sf1").value
+   });
+
+   save();
+
+   closeModal();
+
+   toast(
+    "Stok hareketi kaydedildi"
+   );
+ };
+
+ document.getElementById(
+  "modal"
+ ).classList.add("show");
+}
+
+function runMRP(){
+
+ toast(
+  "MRP hesaplandı • Açık üretim: "+
+  data.production.filter(
+   x=>x.status!=="Tamamlandı"
+  ).length
+ );
+}/* === DEVAM 3/3 === */
+
+function permissionsPage(){
+
+ header(
+  "Yetki Matrisi",
+  "Personellere modül ve işlem bazında yetki verin.",
+  '<button class="btn primary" onclick="savePermissions()">Yetkileri Kaydet</button>'+
+  '<button class="btn" onclick="clearPermissions()">Varsayılanlara Dön</button>'
+ );
+
+ const roles=[
+  "Yönetici",
+  "Üretim",
+  "Depo",
+  "Satış",
+  "Satın Alma",
+  "Muhasebe",
+  "Kalite",
+  "Bakım",
+  "İK"
+ ];
+
+ const actions=[
+  "Görüntüle",
+  "Ekle",
+  "Düzenle",
+  "Sil",
+  "Onayla",
+  "Dışa Aktar"
+ ];
+
+ let rows="";
+
+ Object.keys(menuData).forEach(module=>{
+
+  roles.forEach(role=>{
+
+   rows+=
+    '<tr>'+
+     '<td><b>'+esc(module)+'</b></td>'+
+     '<td>'+esc(role)+'</td>'+
+
+     actions.map(a=>
+      '<td style="text-align:center">'+
+       '<input type="checkbox" '+
+       'data-module="'+esc(module)+'" '+
+       'data-role="'+esc(role)+'" '+
+       'data-action="'+esc(a)+'">'+
+      '</td>'
+     ).join("")+
+
+    '</tr>';
+
+  });
+
+ });
+
+ document.getElementById("content")
+  .insertAdjacentHTML(
+
+   "beforeend",
+
+   '<div class="card">'+
+    '<div class="cardbody" style="overflow:auto">'+
+
+     '<div class="notice">'+
+      '<b>Sistem Yöneticisi:</b> '+
+      'Tüm ERP modüllerine tam erişim sahibidir.'+
+     '</div>'+
+
+     '<table style="min-width:1100px">'+
+
+      '<thead>'+
+       '<tr>'+
+        '<th>Modül</th>'+
+        '<th>Rol</th>'+
+        actions.map(a=>
+         '<th>'+a+'</th>'
+        ).join("")+
+       '</tr>'+
+      '</thead>'+
+
+      '<tbody>'+
+       rows+
+      '</tbody>'+
+
+     '</table>'+
+
+    '</div>'+
+   '</div>'
+
+  );
+
+}
+
+function savePermissions(){
+
+ const permissions={};
+
+ document
+  .querySelectorAll(
+   'input[data-module]'
+  )
+  .forEach(cb=>{
+
+   if(cb.checked){
+
+    const key=
+     cb.dataset.module+
+     "|" +
+     cb.dataset.role+
+     "|" +
+     cb.dataset.action;
+
+    permissions[key]=true;
+   }
+
+  });
+
+ localStorage.setItem(
+  "ardaPermissions",
+  JSON.stringify(permissions)
+ );
+
+ log(
+  "Yetki matrisi kaydedildi",
+  "Sistem",
+  "Personel yetkileri güncellendi"
+ );
+
+ toast(
+  "Yetki matrisi başarıyla kaydedildi"
+ );
+}
+
+function clearPermissions(){
+
+ if(
+  !confirm(
+   "Özel yetkiler temizlensin mi?"
+  )
+ )
+  return;
+
+ localStorage.removeItem(
+  "ardaPermissions"
+ );
+
+ toast(
+  "Varsayılan yetkiler yüklendi"
+ );
+
+ setTimeout(
+  ()=>location.reload(),
+  500
+ );
+}
+
+
+/* KULLANICI ÇIKIŞI */
+
+function logout(){
+
+ localStorage.removeItem(
+  "ardaSession"
+ );
+
+ location.reload();
+
+}
+
+
+/* GÜVENLİK KONTROLÜ */
+
+function checkSession(){
+
+ const session=
+  JSON.parse(
+   localStorage.getItem(
+    "ardaSession"
+   )||"null"
+  );
+
+ if(session){
+
+  document.getElementById(
+   "role"
+  ).textContent=
+   session.role||
+   "Sistem Yöneticisi";
+
+  document.getElementById(
+   "login"
+  ).classList.remove(
+   "show"
+  );
+
+  return;
+ }
+
+ document.getElementById(
+  "login"
+ ).classList.add(
+  "show"
+);
+
+}
+
+
+/* ANA MENÜ BAŞLANGICI */
+
+function startERP(){
+
+ buildMenu();
+
+ const firstGroup=
+  document.querySelector(
+   ".group"
+  );
+
+ if(firstGroup){
+
+  firstGroup.classList.add(
+   "open"
+  );
+
+  const firstButton=
+   firstGroup.querySelector(
+    ".sub button"
+   );
+
+  if(firstButton){
+
+   firstButton.classList.add(
+    "active"
+   );
+
+   openSub(
+    null,
+    firstGroup.dataset.name,
+    0
+   );
 
   }
 
- };
+ }
 
- r.readAsText(f);
+ checkSession();
+
 }
 
-build();
 
-dashboard();
+/* ENTER TUŞU İLE GİRİŞ */
 
-login();
+document.addEventListener(
+ "keydown",
+ function(e){
+
+  if(
+   e.key==="Enter" &&
+   document.getElementById(
+    "login"
+   ).classList.contains("show")
+  ){
+
+   login();
+
+  }
+
+ }
+);
+
+
+/* MODAL DIŞINA TIKLAYINCA KAPAT */
+
+document
+ .getElementById("modal")
+ .addEventListener(
+  "click",
+  function(e){
+
+   if(
+    e.target===this
+   ){
+
+    closeModal();
+
+   }
+
+  }
+ );
+
+
+/* ESC İLE MODAL KAPAT */
+
+document.addEventListener(
+ "keydown",
+ function(e){
+
+  if(e.key==="Escape"){
+
+   closeModal();
+
+  }
+
+ }
+);
+
+
+/* ERP'Yİ BAŞLAT */
+
+startERP();
+
 </script>
 </body>
-</html></body>
+</html>
